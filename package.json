@@ -51,9 +51,7 @@
     "dev": "dotenv -e .env.staging react-scripts build",
     "test": "react-scripts test --env=jsdom --verbose false --silent=false",
     "eject": "react-scripts eject",
-    "lint": "eslint ./src/",
-    "serve": "serve -s build",
-    "start": "serve -s build"
+    "lint": "eslint ./src/"
   },
   "browserslist": {
     "production": [
