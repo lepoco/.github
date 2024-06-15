@@ -263,10 +263,10 @@ export class Layout extends PureComponent {
           <div className="pages-nav__item">
             <Link
               className="link --page"
-              to="/marketing"
+              to="/tools"
               role="menuitem"
               onClick={e => this.onNavClick(e)}>
-              Content marketing
+              Tools
             </Link>
           </div>
           <div className="pages-nav__item">

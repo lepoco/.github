@@ -20,10 +20,6 @@ export class Home extends PureComponent {
 
   public typedSpanElement: HTMLSpanElement | null = null;
 
-  public matrixMarketing: HTMLSpanElement | null = null;
-
-  public matrixReach: HTMLSpanElement | null = null;
-
   public componentDidMount() {
     this.printMatrix();
     this.printTyped();
@@ -39,23 +35,6 @@ export class Home extends PureComponent {
   }
 
   private printMatrix(): void {
-    if (this.matrixMarketing != null)
-      Matrix.print(this.matrixMarketing, [
-        'YouTube',
-        'Instagram',
-        'Facebook',
-        'Pinterest',
-        'LinkedIn',
-      ]);
-
-    if (this.matrixReach != null)
-      Matrix.print(this.matrixReach, [
-        '8 000 000',
-        '27 000 000',
-        '300 000',
-        '570 000',
-        '54 000',
-      ]);
   }
 
   private printTyped(): void {
@@ -63,11 +42,11 @@ export class Home extends PureComponent {
     // your desired props to this destructuring assignment.
     // You can pass other options here, such as typing speed, back speed, etc.
     const options = {
-      strings: ['', /*"I", "YOU", "WE",*/ 'WE MAKE THINGS'],
+      strings: ['', /*"I", "YOU", "WE",*/ 'WE MAKE THINGS'], // sometimes does not start on safari
       cursorChar: '.',
       typeSpeed: 80,
       startDelay: 0,
-      backDelay: 2000,
+      backDelay: 1000,
       smartBackspace: true,
       loop: false,
     };
@@ -118,33 +97,6 @@ export class Home extends PureComponent {
             <div className="row">
               <div className="col-12 col-lg-6 -reveal">
                 <div className="banner__title">
-                  <h2>Content Marketing</h2>
-                  <span
-                    className="matrix-marketing"
-                    ref={el => {
-                      this.matrixMarketing = el;
-                    }}></span>
-                </div>
-              </div>
-              <div className="col-12 col-lg-6 -reveal">
-                <p>
-                  Spectacular content makes spectacular results. Instead of
-                  creating empty needs, we build emotions. We know our recipient
-                  and intensify our commitment. We operate, measure and analyze,
-                  leaving space only for content that is effective. Did you know
-                  there are 530 words on this page? Each of them tells you that
-                  we know how. You just tell us what.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="banner --gray">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 col-lg-6 -reveal">
-                <div className="banner__title">
                   <h2>Budgeree software</h2>
                 </div>
               </div>
@@ -162,7 +114,7 @@ export class Home extends PureComponent {
           </div>
         </div>
 
-        <div className="banner">
+        <div className="banner --gray">
           <div className="container">
             <div className="row">
               <div className="col-12 col-lg-6 -reveal">
@@ -223,7 +175,7 @@ export class Home extends PureComponent {
                   <div className="col-3 col-lg-2">
                     <img
                       className="banner__brand"
-                      src="img/brands/raw-film-logo-lepo.png"
+                      src="img/brands/cinity-logo-lepo.png"
                       height="35"
                       width="71"
                       loading="lazy"
@@ -234,6 +186,16 @@ export class Home extends PureComponent {
                     <img
                       className="banner__brand"
                       src="img/brands/sezane-logo-lepo.png"
+                      height="35"
+                      width="71"
+                      loading="lazy"
+                      alt="lepo.co cooperation brand"
+                    />
+                  </div>
+                  <div className="col-3 col-lg-2">
+                    <img
+                      className="banner__brand"
+                      src="img/brands/microsoft-logo-lepo.png"
                       height="35"
                       width="71"
                       loading="lazy"
@@ -263,16 +225,6 @@ export class Home extends PureComponent {
                   <div className="col-3 col-lg-2">
                     <img
                       className="banner__brand"
-                      src="img/brands/voopoo-logo-lepo.png"
-                      height="35"
-                      width="71"
-                      loading="lazy"
-                      alt="lepo.co cooperation brand"
-                    />
-                  </div>
-                  <div className="col-3 col-lg-2">
-                    <img
-                      className="banner__brand"
                       src="img/brands/twisto-logo-lepo.png"
                       height="35"
                       width="71"
@@ -293,7 +245,7 @@ export class Home extends PureComponent {
                   <div className="col-3 col-lg-2">
                     <img
                       className="banner__brand"
-                      src="img/brands/geekvape-logo-lepo.png"
+                      src="img/brands/asseco-logo-lepo.png"
                       height="35"
                       width="71"
                       loading="lazy"
