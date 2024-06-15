@@ -1,2 +1,3 @@
+Sitemap: https://lepo.co/sitemap.txt
 User-agent: *
 Disallow:
