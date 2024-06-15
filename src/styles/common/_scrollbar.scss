@@ -1,0 +1,31 @@
+@media (min-width: 900px) {
+  body {
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #252528;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #171718;
+    }
+  }
+}
+
+.page {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #252528;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #171718;
+  }
+}
