@@ -7,7 +7,6 @@
 
 import { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import Matrix from './../common/Matrix';
 import PointWave from '../common/PointWave';
 import Typed from 'typed.js';
 
@@ -21,7 +20,6 @@ export class Home extends PureComponent {
   public typedSpanElement: HTMLSpanElement | null = null;
 
   public componentDidMount() {
-    this.printMatrix();
     this.printTyped();
     this.drawPolygon();
   }
@@ -32,9 +30,6 @@ export class Home extends PureComponent {
     if (this.typed == null) return;
 
     this.typed.destroy();
-  }
-
-  private printMatrix(): void {
   }
 
   private printTyped(): void {
