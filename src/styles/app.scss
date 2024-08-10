@@ -12,10 +12,11 @@
 @import "fonts";
 @import "variables";
 
-@import './bootstrap/functions';
-@import './bootstrap/variables';
-@import './bootstrap/breakpoints';
-@import './bootstrap/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+// @import './bootstrap/functions';
+// @import './bootstrap/variables';
+// @import './bootstrap/breakpoints';
+// @import './bootstrap/bootstrap';
 
 @import './common/modifiers';
 @import './common/base';
@@ -24,3 +25,6 @@
 @import './common/blueprint';
 @import './common/scrollbar';
 @import './common/typed';
+
+@import './components/pricing';
+@import './components/courses';

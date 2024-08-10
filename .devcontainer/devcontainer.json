@@ -1,0 +1,27 @@
+{
+  "name": "React App Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "14"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "forwardPorts": [
+    16731
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder}/.env,target=/workspace/.env,type=bind"
+  ],
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  }
+}

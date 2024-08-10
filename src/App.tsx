@@ -14,9 +14,9 @@ import { Home } from './components/Home';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { Blog } from './components/Blog';
 import { Contact } from './components/Contact';
-import { Programming } from './components/Programming';
+import { Courses } from './components/Courses';
 import { NotFound } from './components/NotFound';
-import { Tools } from './components/Tools';
+import { Support } from './components/Support';
 
 class App extends RoutedComponent {
   public static displayName: string = App.name;
@@ -29,8 +29,8 @@ class App extends RoutedComponent {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/news" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/tools" element={<Tools />} />
-          <Route path="/programming" element={<Programming />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/courses" element={<Courses />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
