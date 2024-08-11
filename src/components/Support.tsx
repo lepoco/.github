@@ -134,7 +134,7 @@ export class Support extends PureComponent {
                       />
                     </div>
                     <div className="pricing-cost">
-                      <p className="pricing-quote">individual quote</p>
+                      <p className="pricing-quote">Request a quote</p>
                     </div>
                   </div>
                   <div className="pricing-description">
