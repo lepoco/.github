@@ -3,7 +3,6 @@ title: 'Welcome to My Development Journey'
 description: 'An introduction to my world of .NET development, open-source contributions, and building tools that developers love to use.'
 pubDate: 2024-01-01
 author: 'Leszek Pomianowski'
-image: 'https://wpfui.lepo.co/assets/wpfui-gallery-sample.png'
 tags: ['introduction', 'wpf', 'dotnet', 'open-source']
 ---
 
@@ -30,12 +29,15 @@ This blog is my way of sharing the journey - the successes, the challenges, and 
 Every project I work on is guided by a few core principles:
 
 ### Beauty Meets Function
+
 Technology should be beautiful. Whether it's a UI library or a command-line tool, good design makes everything better.
 
 ### Community First
+
 The best software is built by communities, not individuals. Every contribution, no matter how small, makes a difference.
 
 ### Modern Standards
+
 Why settle for outdated experiences when we can build something that feels native to today's platforms?
 
 ## Current Focus

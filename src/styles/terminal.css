@@ -2,12 +2,50 @@
 @import url('https://cdn.staticdelivr.com/gfonts/css2?family=Fira+Code:wght@300..700&display=swap');
 
 :root {
-  --background: #1a170f;
-  --foreground: #eceae5;
-  --accent: #eec35e;
+  /* Light mode by default */
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #6b7f5c;
   --radius: 0;
   --font-size: 1rem;
   --line-height: 1.54em;
+}
+
+/* Dark mode when user prefers dark color scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+    --accent: #8fa882;
+  }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--foreground);
+  background: transparent;
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 0.875rem;
+  user-select: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.theme-toggle:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.theme-toggle:active {
+  transform: translateY(1px);
+}
+
+.theme-text {
+  display: block;
+  font-weight: 400;
 }
 
 html {

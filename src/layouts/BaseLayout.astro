@@ -48,6 +48,9 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
               </div>
             </a>
           </div>
+          <div class="theme-toggle" id="theme-toggle" title="Toggle theme">
+            <span class="theme-text">theme</span>
+          </div>
           <ul class="menu menu--mobile">
             <li class="menu__trigger">Menu ▾</li>
             <li>
@@ -101,8 +104,6 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           <div class="copyright">
             <span>© 2025 lepo.co <a href="https://github.com/lepoco" target="_blank">Leszek Pomianowski</a></span>
             <span class="separator">::</span>
-            <span><a href={`${base}privacy/`}>Privacy Policy</a></span>
-            <span class="separator">::</span>
             <span>Theme made by <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">panr</a></span>
             <span class="separator">::</span>
             <span>Ported by <a href="https://github.com/dennisklappe">Dennis Klappe</a></span>
@@ -112,6 +113,61 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     </div>
     
     <script>
+      // Theme toggle functionality
+      (() => {
+        const themeToggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        
+        // Check for saved theme preference or default to auto
+        const savedTheme = localStorage.getItem('theme');
+        
+        function setTheme(theme) {
+          if (theme === 'dark') {
+            root.style.setProperty('--background', '#000000');
+            root.style.setProperty('--foreground', '#ffffff');
+            root.style.setProperty('--accent', '#8fa882');
+            root.setAttribute('data-theme', 'dark');
+          } else if (theme === 'light') {
+            root.style.setProperty('--background', '#ffffff');
+            root.style.setProperty('--foreground', '#000000');
+            root.style.setProperty('--accent', '#6b7f5c');
+            root.setAttribute('data-theme', 'light');
+          } else {
+            // Auto mode - remove custom properties to use CSS media queries
+            root.style.removeProperty('--background');
+            root.style.removeProperty('--foreground');
+            root.style.removeProperty('--accent');
+            root.setAttribute('data-theme', 'auto');
+          }
+          localStorage.setItem('theme', theme);
+        }
+        
+        // Apply saved theme or default to auto
+        if (savedTheme) {
+          setTheme(savedTheme);
+        } else {
+          setTheme('auto');
+        }
+        
+        // Theme toggle click handler
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('theme') || 'auto';
+            let nextTheme;
+            
+            if (currentTheme === 'auto') {
+              nextTheme = 'light';
+            } else if (currentTheme === 'light') {
+              nextTheme = 'dark';
+            } else {
+              nextTheme = 'auto';
+            }
+            
+            setTheme(nextTheme);
+          });
+        }
+      })();
+
       // Menu functionality
       (() => {
         const container = document.querySelector(".container");
@@ -151,9 +207,9 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
               }
               
               // Adjust dropdown position if it goes outside container
-              if (dropdown.getBoundingClientRect().right > container.getBoundingClientRect().right) {
-                dropdown.style.left = "auto";
-                dropdown.style.right = "0";
+              if (container && dropdown.getBoundingClientRect().right > container.getBoundingClientRect().right) {
+                (dropdown as HTMLElement).style.left = "auto";
+                (dropdown as HTMLElement).style.right = "0";
               }
             });
             

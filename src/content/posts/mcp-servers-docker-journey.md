@@ -3,7 +3,6 @@ title: 'Building MCP Servers: Making AI Work with Business Tools'
 description: 'How I built two Model Context Protocol servers for Camunda and OpenAPI that ended up in Dockers official MCP repository.'
 pubDate: 2024-12-01
 author: 'Leszek Pomianowski'
-image: 'https://raw.githubusercontent.com/lepoco/mcp-camunda/refs/heads/main/build/icon.png'
 tags: ['mcp', 'docker', 'camunda', 'openapi', 'ai', 'automation']
 ---
 
@@ -41,7 +40,7 @@ The Camunda server provides 12 tools for interacting with process engines. It ha
 }
 ```
 
-## 🔍 OpenAPI MCP Server
+## OpenAPI MCP Server
 
 The OpenAPI MCP Server is a comprehensive toolkit for working with API specifications, providing **5 essential tools**:
 
@@ -58,58 +57,7 @@ The OpenAPI MCP Server is a comprehensive toolkit for working with API specifica
 - **Integration Planning**: Understand API capabilities quickly
 - **Development Acceleration**: Reduce boilerplate code writing
 
-## 🎯 Why MCP Matters
-
-The Model Context Protocol represents a paradigm shift in how we think about AI integration:
-
-### For Developers
-- **Seamless Integration**: Connect AI with existing tools and systems
-- **Standardized Approach**: Consistent way to expose functionality to AI
-- **Security First**: Controlled access to sensitive operations
-- **Ecosystem Growth**: Rich marketplace of available servers
-
-### For Organizations  
-- **Workflow Automation**: AI-powered process management
-- **Knowledge Integration**: Connect AI with internal systems
-- **Reduced Development Time**: Pre-built connectors for common tools
-- **Scalable Solutions**: Docker-based deployment and management
-
-## 🚀 Technical Implementation
-
-Both servers are built with modern practices in mind:
-
-### Architecture Highlights
-- **Docker-first**: Easy deployment and scaling
-- **Environment Configuration**: Flexible setup for different environments
-- **Error Handling**: Robust error management and reporting
-- **Documentation**: Comprehensive tool descriptions and examples
-
-### Security Considerations
-- **Isolated Execution**: Docker containers provide process isolation
-- **Environment Variables**: Secure configuration management
-- **Signed Images**: Docker supply chain security with Cosign
-- **MIT Licensed**: Open-source transparency
-
-## 📊 Community Impact
-
-The response from the community has been overwhelming:
-
-- **Camunda MCP**: 452+ pulls from Docker Hub
-- **OpenAPI MCP**: 781+ pulls from Docker Hub
-- **Multi-platform Support**: Compatible with Claude Desktop, Continue.dev, Cursor, VS Code, and more
-- **Active Development**: Regular updates and feature additions
-
-## 🔮 Future Developments
-
-The MCP ecosystem is rapidly evolving, and I'm committed to expanding these tools:
-
-### Planned Enhancements
-- **Extended Camunda Support**: Additional process engine versions
-- **More Code Generators**: Support for additional programming languages
-- **Enhanced Documentation**: Interactive examples and tutorials
-- **Performance Optimizations**: Faster response times and lower resource usage
-
-## 💡 Getting Started
+## Getting Started
 
 Want to try these MCP servers? Here's how:
 
@@ -122,22 +70,7 @@ docker mcp server enable camunda
 docker mcp server enable openapi
 ```
 
-### Integration Examples
-Both servers work seamlessly with popular AI development tools:
-- **Claude Desktop**: Direct integration for AI-powered workflows
-- **Continue.dev**: Enhanced coding assistance
-- **Cursor**: Intelligent code completion
-- **VS Code**: Advanced development features
-
-## 🙏 Acknowledgments
-
-This achievement is the result of:
-- **Docker's commitment** to the MCP ecosystem
-- **Anthropic's vision** for the Model Context Protocol
-- **Community feedback** and testing
-- **Open-source collaboration** principles
-
-## 🚀 Join the Movement
+## Development
 
 The MCP ecosystem is just getting started. Here's how you can get involved:
 

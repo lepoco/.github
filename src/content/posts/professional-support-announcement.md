@@ -3,7 +3,6 @@ title: 'Professional Support for WPF UI and Other Projects'
 description: 'Introducing professional support options for teams using WPF UI and other projects in production environments.'
 pubDate: 2024-11-01
 author: 'Leszek Pomianowski'
-image: 'https://lepo.co/assets/support-banner.png'
 tags: ['support', 'business', 'wpf', 'professional', 'services']
 ---
 
@@ -24,12 +23,6 @@ I'm keeping this simple with three tiers:
 **Priority Email Support** is perfect for small teams and startups. You get priority response to technical questions, implementation guidance, best practices consultation, and access to exclusive resources.
 
 **Professional Support** adds video consultation sessions, code review and optimization, custom feature prioritization, and migration assistance.
-
-**Enterprise Support** includes 24/7 dedicated support, on-site consultation when needed, custom development services, training workshops, and SLA agreements.
-
-## What's Covered
-
-Hardware monitoring for Radiograph applications, performance optimization for smooth responsive apps, architecture guidance for scalable patterns in large applications, migration support for moving from legacy frameworks, and custom theming for brand-specific designs.
 
 ## Who This Is For
 

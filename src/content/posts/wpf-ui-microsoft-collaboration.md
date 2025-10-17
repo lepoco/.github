@@ -3,7 +3,7 @@ title: 'WPF UI and Microsoft: An Unexpected Collaboration'
 description: 'How a personal project to modernize WPF applications caught Microsoft attention and led to official collaboration on .NET 9.'
 pubDate: 2024-01-15
 author: 'Leszek Pomianowski'
-image: 'https://wpfui.lepo.co/assets/wpfui-gallery-sample.png'
+image: 'https://opengraph.githubassets.com/351a1aec13d918e77632605b8c99db5d240249e27024ca5d1dad1070924b5502/dotnet/wpf/discussions/8533'
 tags: ['wpf', 'microsoft', 'dotnet', 'collaboration', 'open-source']
 ---
 
@@ -20,24 +20,6 @@ The idea was straightforward: create a set of controls that actually implemented
 WPF UI has grown beyond what I expected when I started it. As of now, it has 8.8k stars on GitHub, 894 forks, and is being used in over 2,500 projects. There are 89 contributors who have helped improve it.
 
 The most visible use is probably Microsoft PowerToys, where WPF UI powers the PowerToys Run interface. Knowing that millions of developers use my library daily through PowerToys is still somewhat surreal.
-
-## The Microsoft Collaboration
-
-The partnership aims to bring native modern Windows 11 appearance to WPF without requiring external dependencies. This means developers will get modern controls, proper theming, and Windows 11 design patterns built into the framework itself.
-
-```xml
-<ui:FluentWindow xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
-  <StackPanel>
-    <ui:TitleBar Title="Modern WPF App"/>
-    <ui:Card Margin="8">
-      <ui:Button Content="Modern Button" 
-                 Icon="{ui:SymbolIcon Fluent24}" />
-    </ui:Card>
-  </StackPanel>
-</ui:FluentWindow>
-```
-
-The key features include modern Windows 11 controls with Fluent Design, automatic dark and light theme support, custom navigation patterns, advanced window management including Snap Layouts, and Mica and Acrylic background effects.
 
 ## What This Means
 
