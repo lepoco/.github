@@ -1,52 +1,29 @@
 ---
-title: 'WPF UI x Microsoft: A Historic Collaboration'
-description: 'How WPF UI became part of the official .NET 9 framework through collaboration with Microsoft, marking a significant milestone for the open-source community.'
+title: 'WPF UI and Microsoft: An Unexpected Collaboration'
+description: 'How a personal project to modernize WPF applications caught Microsoft attention and led to official collaboration on .NET 9.'
 pubDate: 2024-01-15
 author: 'Leszek Pomianowski'
 image: 'https://wpfui.lepo.co/assets/wpfui-gallery-sample.png'
 tags: ['wpf', 'microsoft', 'dotnet', 'collaboration', 'open-source']
 ---
 
-I'm thrilled to share one of the most significant moments in my development career - the official collaboration between **WPF UI** and **Microsoft's WPF team** to integrate modern design elements into .NET 9.
+In December 2023, I got an email that I had to read twice. Microsoft's WPF team wanted to collaborate on bringing WPF UI functionality into the core .NET framework. What started as a personal project to make WPF applications look less like they were built in 2005 had somehow caught the attention of the people who actually build WPF.
 
-## 🎯 The Journey
+## How This Started
 
-What started as a personal project to bring modern Windows 11 design to WPF applications has evolved into something much bigger. WPF UI has grown from a simple library to a comprehensive solution used by thousands of developers worldwide.
+I started working on WPF UI because I was frustrated with how difficult it was to make WPF applications that looked like they belonged on modern Windows. Everything looked dated, and getting basic things like proper theming or modern controls required jumping through hoops or using workarounds that felt fragile.
 
-### The Numbers Speak
-- **8.8k+ GitHub stars** ⭐
-- **894 forks** 🍴
-- **2.5k+ projects** using WPF UI
-- **89 contributors** from the community
-- **Used by Microsoft PowerToys** - one of GitHub's most popular developer tools
+The idea was straightforward: create a set of controls that actually implemented the Windows 11 design language properly, handled theming automatically, and didn't require developers to become designers to make their applications look decent.
 
-## 🤝 The Microsoft Partnership
+## The Numbers
 
-In December 2023, I had the incredible honor to announce that Microsoft's WPF team reached out to collaborate on bringing WPF UI functionality directly into the .NET framework. This partnership aims to:
+WPF UI has grown beyond what I expected when I started it. As of now, it has 8.8k stars on GitHub, 894 forks, and is being used in over 2,500 projects. There are 89 contributors who have helped improve it.
 
-- Provide modern Windows 11 appearance natively in WPF
-- Maintain the familiar WPF development experience
-- Bridge traditional .NET frameworks with modern design principles
-- Support the evolving needs of desktop application developers
+The most visible use is probably Microsoft PowerToys, where WPF UI powers the PowerToys Run interface. Knowing that millions of developers use my library daily through PowerToys is still somewhat surreal.
 
-## 🚀 What This Means
+## The Microsoft Collaboration
 
-This collaboration represents more than just code integration - it's about:
-
-### For Developers
-- **Native modern controls** in WPF without additional dependencies
-- **Seamless integration** with existing WPF projects
-- **Official Microsoft support** for modern Windows design patterns
-- **Continued innovation** in desktop application development
-
-### For the Community
-- **Open-source impact** being recognized at the highest level
-- **Community-driven development** influencing major frameworks
-- **Sustainable future** for WPF technology
-
-## 💡 Technical Highlights
-
-WPF UI brings several key innovations to the table:
+The partnership aims to bring native modern Windows 11 appearance to WPF without requiring external dependencies. This means developers will get modern controls, proper theming, and Windows 11 design patterns built into the framework itself.
 
 ```xml
 <ui:FluentWindow xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
@@ -60,43 +37,28 @@ WPF UI brings several key innovations to the table:
 </ui:FluentWindow>
 ```
 
-Key features include:
-- **Modern Windows 11 controls** with Fluent Design
-- **Dark/Light theme support** with system integration
-- **Custom navigation** patterns
-- **Advanced window management** including Snap Layouts
-- **Mica and Acrylic** background effects
+The key features include modern Windows 11 controls with Fluent Design, automatic dark and light theme support, custom navigation patterns, advanced window management including Snap Layouts, and Mica and Acrylic background effects.
 
-## 🌟 PowerToys Integration
+## What This Means
 
-One of the most rewarding aspects of this journey has been seeing WPF UI power **Microsoft PowerToys Run**. PowerToys is one of the most beloved developer tools on GitHub, and knowing that my library helps millions of developers daily is incredibly fulfilling.
+For developers, this collaboration means native modern controls in WPF without additional dependencies, seamless integration with existing projects, official Microsoft support for modern Windows design patterns, and continued innovation in desktop development.
 
-## 🔮 Looking Forward
+For the broader community, it demonstrates that open-source work can influence major frameworks, that community-driven development matters, and that there's still a future for WPF technology.
 
-While some functionality will become part of core WPF, **WPF UI will continue to evolve**:
-- Support for older .NET versions
-- Advanced custom controls
-- Experimental features and innovations
-- Community-driven enhancements
+## PowerToys Integration
 
-## 🙏 Gratitude
+One of the most rewarding aspects has been seeing WPF UI used in Microsoft PowerToys Run. PowerToys is one of the most popular developer tools on GitHub, and knowing that my work helps millions of developers daily is incredibly fulfilling.
 
-This achievement wouldn't have been possible without the incredible support from:
-- The amazing **WPF UI community** and contributors
-- **Microsoft's WPF team**, especially for recognizing the value of community-driven innovation
-- All the developers who trusted WPF UI in their projects
-- Everyone who provided feedback, bug reports, and feature requests
+## What's Next
 
-## 🚀 Get Involved
+While some functionality will become part of core WPF, WPF UI will continue to evolve. It will maintain support for older .NET versions, provide advanced custom controls, offer experimental features and innovations, and continue being driven by community needs.
 
-Whether you're just starting with WPF or are a seasoned developer, I invite you to:
-- Try **WPF UI** in your next project
-- Contribute to the **open-source ecosystem**
-- Join our community discussions
-- Support through **GitHub Sponsors**
+The collaboration with Microsoft doesn't change the open-source nature of WPF UI. If anything, it validates the approach and provides more resources to make desktop application development better for everyone.
 
-You can find WPF UI on [GitHub](https://github.com/lepoco/wpfui) and explore the documentation at [wpfui.lepo.co](https://wpfui.lepo.co).
+## Personal Reflection
 
----
+This achievement wouldn't have been possible without the WPF UI community and contributors, Microsoft's WPF team recognizing the value of community-driven innovation, developers who trusted WPF UI in their projects, and everyone who provided feedback and bug reports.
 
-*This collaboration marks a new chapter not just for WPF UI, but for the entire .NET desktop development ecosystem. Together, we're making desktop applications beautiful again.*
+What started as a personal frustration with the state of WPF applications has become something that influences the direction of the framework itself. It's a reminder that individual contributions to open source can have impacts far beyond what you initially imagine.
+
+If you're working on desktop applications and want them to look like they belong on modern Windows, you can find WPF UI on GitHub and explore the documentation at wpfui.lepo.co. The project remains open to contributions and feedback from the community.

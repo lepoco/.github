@@ -1,49 +1,34 @@
 ---
-title: 'Building Radiograph: A Modern Hardware Monitoring Application'
-description: 'The story behind creating Radiograph, a universal computer monitoring tool that combines WPF UI with LibreHardwareMonitor, now installed on 65,000+ computers.'
+title: 'Building Radiograph: A Hardware Monitoring App'
+description: 'How I built Radiograph, a hardware monitoring tool that somehow ended up being installed on 65,000+ computers.'
 pubDate: 2024-09-10
 author: 'Leszek Pomianowski'
 image: 'https://store-images.s-microsoft.com/image/apps.31175.9NH1P86H06CG.baa9b5c0-2c6c-4b8e-9e3c-ce0c7b0ed70b.cf87bea0-a18f-431a-b1e3-6de44421b1d4'
 tags: ['radiograph', 'wpf', 'hardware-monitoring', 'microsoft-store', 'librehardwaremonitor']
 ---
 
-When I set out to create **Radiograph**, I had a simple vision: build a universal computer monitoring tool that was both powerful and beautiful. Today, with over 65,000 installations and a 4.7-star rating on the Microsoft Store, Radiograph has become a testament to what's possible when modern UI meets robust functionality.
+I started working on Radiograph because I was frustrated with hardware monitoring tools. They all looked like they were built in 2005 and worked about as well. I wanted something that actually looked decent and gave me the information I needed without making me feel like I needed a computer science degree to understand it.
 
-## The Vision Behind Radiograph
+## Why I Built This
 
-Hardware monitoring applications have traditionally been functional but visually outdated. I wanted to create something different - a tool that system administrators, enthusiasts, and everyday users would actually enjoy using.
+Most hardware monitoring applications fall into two categories: either they're incredibly powerful but look terrible, or they look okay but don't tell you anything useful. I use these tools regularly to keep an eye on temperatures when I'm pushing my system, and I got tired of interfaces that made me squint to read tiny text or navigate through confusing menus.
 
-### Core Requirements
-- **Comprehensive Monitoring** - Temperature sensors, fan speeds, voltages, and performance metrics
-- **Modern Interface** - Clean, intuitive design that matches Windows 11
-- **Real-time Data** - Instant updates without performance impact
-- **Reliable Backend** - Accurate hardware detection and monitoring
-- **User-Friendly** - Accessible to both power users and beginners
+I had been working on WPF UI for a while, and it seemed like a good opportunity to build something that actually looked like it belonged on a modern Windows system. The plan was simple: make it work well, make it look good, and don't overcomplicate things.
 
-## Technical Foundation
+## Building on Solid Foundations
 
-Radiograph is built on two key technologies that showcase the power of the .NET ecosystem:
+For the core monitoring functionality, I used LibreHardwareMonitor. This library does the heavy lifting of actually talking to your hardware and getting sensor data. I've contributed some improvements to it over time, particularly around SMBIOS handling for motherboard information.
 
-### WPF UI Integration
-Using my own WPF UI library, Radiograph features:
-- **Modern Windows 11 Design** - Native Fluent Design elements
-- **Automatic Theming** - Seamless light and dark mode support
-- **Responsive Layout** - Adapts beautifully to different screen sizes
-- **Smooth Animations** - Hardware-accelerated transitions and effects
+The UI is built with WPF UI, which gives it that native Windows 11 look without me having to reinvent every control. It handles the theming automatically, so if you switch between light and dark mode, the app just follows along.
 
-### LibreHardwareMonitor Backend
-For hardware monitoring capabilities, Radiograph leverages LibreHardwareMonitor:
-- **Wide Hardware Support** - Intel/AMD CPUs, NVIDIA/AMD GPUs, various sensors
-- **SMBIOS Integration** - Motherboard and system information (where I contributed)
-- **Real-time Monitoring** - Efficient data collection with minimal overhead
-- **Cross-platform Library** - .NET Framework and .NET Core support
+## What It Actually Does
 
-## Key Features
+Radiograph monitors the stuff you'd expect: CPU and GPU temperatures, fan speeds, memory usage, network activity. It shows you system information like what BIOS version you're running and what hardware you have installed.
 
-### Temperature Monitoring
-Track temperatures across all system components:
+The interface shows critical information prominently - if something's running hot, you'll notice it. For day-to-day use, there's a clean overview that doesn't overwhelm you with numbers you don't need. If you want details, they're there, but they don't get in the way.
+
 ```csharp
-// Example of temperature monitoring integration
+// The monitoring setup is straightforward
 public class TemperatureMonitor
 {
     private Computer computer;
@@ -70,7 +55,6 @@ public class TemperatureMonitor
             {
                 if (sensor.SensorType == SensorType.Temperature)
                 {
-                    // Update UI with temperature data
                     UpdateTemperatureDisplay(sensor.Name, sensor.Value);
                 }
             }
@@ -79,55 +63,12 @@ public class TemperatureMonitor
 }
 ```
 
-### Performance Monitoring
-- **CPU Usage** - Real-time processor utilization
-- **Memory Usage** - RAM consumption and availability
-- **GPU Performance** - Graphics card utilization and memory
-- **Network Activity** - Internet connection speed monitoring
+## Performance and Compatibility
 
-### System Information
-- **BIOS Details** - Motherboard and firmware information
-- **Hardware Inventory** - Complete system component listing
-- **Drive Health** - SSD/HDD status and performance metrics
-
-## Design Philosophy
-
-### Windows 11 Native Experience
-Radiograph doesn't just run on Windows 11 - it feels like it belongs there:
-- **Mica Effects** - Translucent backgrounds that match the OS
-- **Rounded Corners** - Consistent with Windows 11 design language
-- **Dynamic Colors** - Automatic accent color integration
-- **Context Menus** - Modern flyout-style menus
-
-### Information Hierarchy
-The interface prioritizes the most important information:
-- **Critical Alerts** - Temperature warnings and system issues
-- **Quick Overview** - Dashboard with key metrics
-- **Detailed Views** - Comprehensive data for power users
-- **Historical Data** - Performance trends over time
-
-## Real-World Impact
-
-### Microsoft Store Success
-Since its release on May 20, 2020, Radiograph has achieved:
-- **4.7/5 Star Rating** - Based on 866 user reviews
-- **65,000+ Installations** - Across Windows 10 and 11 systems
-- **Developer Tools Category** - Top-rated monitoring application
-- **Regular Updates** - Continuous improvements and new features
-
-### User Feedback Highlights
-- "Finally, a hardware monitor that looks modern and works perfectly"
-- "Love how it matches my Windows 11 theme automatically"
-- "Most comprehensive monitoring tool I've used"
-- "The interface is intuitive without sacrificing functionality"
-
-## Technical Challenges and Solutions
-
-### Performance Optimization
-Hardware monitoring requires careful balance between accuracy and performance:
+The tricky part with hardware monitoring is balancing accuracy with performance. You don't want a monitoring tool that slows down your system just to tell you how your system is performing. I spent time optimizing the update intervals and making sure the app only polls sensors that are actually visible.
 
 ```csharp
-// Efficient update strategy
+// Smart updates based on what's visible
 public class OptimizedMonitoringService
 {
     private Timer updateTimer;
@@ -140,7 +81,6 @@ public class OptimizedMonitoringService
     
     private void UpdateCallback(object state)
     {
-        // Update only visible sensors to reduce CPU usage
         if (IsApplicationVisible())
         {
             UpdateVisibleSensors();
@@ -153,105 +93,34 @@ public class OptimizedMonitoringService
 }
 ```
 
-### Memory Management
-- **Efficient Data Structures** - Optimized collections for sensor data
-- **Resource Cleanup** - Proper disposal of hardware monitoring resources
-- **Background Processing** - Non-blocking UI updates
-- **Memory Profiling** - Regular optimization based on usage patterns
+Getting it to work across different hardware configurations was another challenge. Every manufacturer does things slightly differently, and some older systems have quirks. The LibreHardwareMonitor library handles most of this, but there are always edge cases that real users find that testing can't cover.
 
-### Cross-Hardware Compatibility
-Supporting diverse hardware configurations required:
-- **Comprehensive Testing** - Validation across different system configurations
-- **Fallback Mechanisms** - Graceful handling of unsupported hardware
-- **Community Feedback** - User-reported issues driving compatibility improvements
-- **Regular Updates** - LibreHardwareMonitor updates bringing new hardware support
+## Real-World Results
 
-## Development Insights
+Radiograph has been available on the Microsoft Store since May 2020. As of now, it has about 65,000 installations and maintains a 4.7-star rating based on 866 reviews. It's categorized under Developer Tools, though it gets used by a pretty wide range of people.
 
-### WPF UI Benefits
-Building Radiograph with WPF UI demonstrated several advantages:
-- **Rapid Development** - Pre-built modern controls accelerated UI development
-- **Consistent Design** - Automatic compliance with Windows 11 design guidelines
-- **Theme Integration** - System theme changes automatically reflected in the app
-- **Performance** - Hardware-accelerated rendering for smooth animations
+The feedback has been generally positive. People seem to appreciate that it doesn't look like it was designed in the early 2000s, and the automatic theme switching is something that gets mentioned a lot in reviews.
 
-### Open Source Synergy
-Contributing to LibreHardwareMonitor while building Radiograph created a positive feedback loop:
-- **SMBIOS Improvements** - Enhanced motherboard information detection
-- **Bug Fixes** - Real-world testing uncovered edge cases
-- **Feature Requests** - Application needs drove library enhancements
-- **Community Building** - Strengthened relationships with other contributors
+## What I Learned
 
-## Lessons Learned
+Building and maintaining Radiograph taught me a few things about desktop software development:
 
-### User Experience Matters
-The success of Radiograph reinforced several key principles:
-- **Visual Design** - Users appreciate beautiful, modern interfaces
-- **Performance** - Monitoring tools must not impact system performance
-- **Reliability** - Accurate data is more important than flashy features
-- **Accessibility** - Both beginners and experts should feel comfortable
+Users care about visual design more than I initially thought. The functionality could be identical to other monitoring tools, but the modern interface makes a real difference in how people perceive and use the application.
 
-### Platform Integration
-Windows applications benefit significantly from:
-- **Native Design Languages** - Following platform conventions
-- **System Integration** - Leveraging OS features like theming
-- **Store Presence** - Microsoft Store provides credibility and distribution
-- **Regular Updates** - Keeping pace with OS evolution
+Microsoft Store distribution actually works pretty well for this type of utility. The automatic updates and built-in trust from being in the store seem to matter to users, especially for system-level tools.
 
-## Future Development
+Contributing to the libraries you depend on creates a positive feedback loop. The SMBIOS improvements I made to LibreHardwareMonitor came directly from issues I encountered building Radiograph, and now other applications benefit from those fixes.
 
-### Planned Enhancements
-- **Advanced Analytics** - Historical trend analysis and reporting
-- **Cloud Sync** - Settings and data synchronization across devices
-- **Alerting System** - Customizable notifications for critical events
-- **Plugin Architecture** - Community-contributed monitoring extensions
+## Future Plans
 
-### Technology Evolution
-- **.NET 9 Integration** - Leveraging latest framework improvements
-- **Performance Optimizations** - Even more efficient monitoring algorithms
-- **Enhanced UI** - New WPF UI features as they become available
-- **AI Integration** - Intelligent anomaly detection and recommendations
+I'm working on some improvements for future versions: better historical data tracking, more detailed alerting options, and keeping up with the latest .NET and WPF UI improvements.
 
-## Open Source Impact
+The goal remains the same: keep it useful without making it complicated. There are plenty of monitoring tools that do everything imaginable, but I think there's value in something that does the important stuff well and stays out of your way.
 
-### Contributing Back
-Radiograph's success has enabled contributions to the broader ecosystem:
-- **LibreHardwareMonitor** - SMBIOS enhancements and bug fixes
-- **WPF UI** - Real-world usage feedback and feature requests
-- **Community Support** - Helping other developers with similar projects
-- **Knowledge Sharing** - Blog posts and documentation about hardware monitoring
+If you want to try it out, you can find Radiograph on the Microsoft Store. It requires Windows 10 version 17763.0 or higher and uses about 170 MB of disk space.
 
-### Sustainable Development
-The Microsoft Store success of Radiograph demonstrates:
-- **Commercial Viability** - Open source technologies can drive successful applications
-- **Community Benefits** - Success enables further open source contributions
-- **Ecosystem Growth** - Applications showcase library capabilities
-- **Developer Recognition** - Individual contributors can achieve significant impact
+## The Development Context
 
-## Getting Started
+This project sits at the intersection of several things I work on. The LibreHardwareMonitor contributions came from real needs while building Radiograph. The WPF UI library got better because I was using it to build actual applications. And having a successful Microsoft Store app has opened doors for other projects and collaborations.
 
-### Try Radiograph
-You can download Radiograph from the Microsoft Store:
-- **Direct Link**: [Microsoft Store](https://apps.microsoft.com/detail/9nh1p86h06cg)
-- **System Requirements**: Windows 10 version 17763.0 or higher
-- **Size**: Approximately 170 MB
-- **Category**: Developer Tools
-
-### Technical Details
-For developers interested in hardware monitoring:
-- **LibreHardwareMonitor**: [GitHub Repository](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
-- **WPF UI**: [Documentation and Examples](https://wpfui.lepo.co)
-- **SMBIOS Standards**: Understanding motherboard information protocols
-- **Performance Considerations**: Balancing accuracy with system impact
-
-## Conclusion
-
-Radiograph represents more than just a monitoring application - it's a demonstration of how modern UI frameworks can transform traditional desktop software. By combining WPF UI's design capabilities with LibreHardwareMonitor's robust functionality, we created something that users genuinely enjoy using.
-
-The 65,000+ installations and 4.7-star rating validate the approach: users want applications that are both functional and beautiful. As we continue developing desktop applications, Radiograph serves as a template for what's possible when we prioritize both user experience and technical excellence.
-
-Whether you're monitoring your gaming rig's temperatures, keeping an eye on server performance, or just curious about your computer's inner workings, Radiograph demonstrates that system utilities can be both powerful and pleasant to use.
-
----
-
-*Building Radiograph has been an incredible journey of combining open-source technologies, modern design principles, and real user needs. Here's to creating more applications that users love to use every day.*
+It's a good example of how open source development and practical application development can reinforce each other. Building something people actually use reveals problems and opportunities that you don't see when just working on libraries in isolation.

@@ -1,43 +1,26 @@
 ---
 title: 'How WPF UI Powers Microsoft PowerToys Run'
-description: 'The story behind WPF UI becoming the foundation for one of GitHubs most popular developer tools - Microsoft PowerToys Run.'
+description: 'The story behind WPF UI becoming the foundation for Microsoft PowerToys Run, one of GitHubs most popular developer tools.'
 pubDate: 2024-06-15
 author: 'Leszek Pomianowski'
 image: 'https://raw.githubusercontent.com/microsoft/PowerToys/main/doc/images/overview/PT%20Run.png'
 tags: ['powertoys', 'microsoft', 'wpf', 'developer-tools', 'open-source']
 ---
 
-One of the most rewarding moments in my development journey has been seeing **WPF UI** become the foundation for **Microsoft PowerToys Run** - one of the most beloved developer tools on GitHub. Today, I want to share this incredible story of open-source collaboration and community impact.
+One of the most satisfying moments in my development work has been seeing WPF UI become the foundation for Microsoft PowerToys Run. PowerToys is one of the most popular developer tools on GitHub, and knowing that my library helps millions of developers daily is still somewhat surreal.
 
-## 🚀 What is PowerToys Run?
+## What PowerToys Run Does
 
-**PowerToys Run** is a quick launcher for Windows that helps developers and power users find and launch applications, files, and perform quick calculations. It's part of Microsoft PowerToys, a set of utilities that enhance the Windows experience for power users.
+PowerToys Run is a quick launcher for Windows that helps you find and launch applications, search files, perform calculations, and run web searches. It's part of Microsoft PowerToys, which is a collection of utilities for Windows power users.
 
-### Key Features
-- **Fast App Launching**: Type to find and launch any installed application
-- **File Search**: Quickly locate files and folders across your system  
-- **Calculator**: Perform quick calculations without opening a separate app
-- **Web Search**: Search directly from the launcher
-- **Plugin Ecosystem**: Extensible with custom plugins
-- **Keyboard-First**: Designed for efficient keyboard navigation
+The tool is designed around fast app launching by typing to find any installed application, file search across your system, built-in calculator functionality, direct web search capabilities, an extensible plugin ecosystem, and keyboard-first navigation for efficiency.
 
-## 🎯 The Integration Story
+## The Integration Context
 
-The integration of WPF UI into PowerToys wasn't just a technical decision - it was about bringing modern Windows 11 design principles to a tool used by millions of developers daily.
-
-### The Challenge
-PowerToys needed:
-- Modern, clean interface that matches Windows 11 aesthetics
-- High performance for instant search results
-- Accessibility compliance
-- Consistent theming with system preferences
-- Smooth animations and transitions
-
-### The Solution: WPF UI
-WPF UI provided exactly what PowerToys needed:
+The PowerToys team needed a modern interface that matched Windows 11 design principles, high performance for instant search results, accessibility compliance, consistent theming with system preferences, and smooth animations. WPF UI provided exactly what they needed.
 
 ```xml
-<!-- Example of modern PowerToys-style interface with WPF UI -->
+<!-- Example of PowerToys-style interface with WPF UI -->
 <ui:FluentWindow WindowStyle="None" 
                  Background="{ui:ThemeResource}">
   <Grid>
@@ -46,8 +29,6 @@ WPF UI provided exactly what PowerToys needed:
         <ui:TextBox PlaceholderText="Start typing to search..."
                     FontSize="16"/>
         <ListView ItemsSource="{Binding SearchResults}">
-          <ListView.ItemTemplate>
-            <DataTemplate>
               <ui:Card Margin="4" Padding="8">
                 <StackPanel Orientation="Horizontal">
                   <ui:SymbolIcon Symbol="{Binding Icon}" 

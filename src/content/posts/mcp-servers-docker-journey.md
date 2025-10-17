@@ -1,44 +1,32 @@
 ---
-title: 'Building MCP Servers: From Idea to Official Docker Repository'
-description: 'The journey of creating two Model Context Protocol servers - Camunda and OpenAPI - that made it to the official Docker MCP repository.'
+title: 'Building MCP Servers: Making AI Work with Business Tools'
+description: 'How I built two Model Context Protocol servers for Camunda and OpenAPI that ended up in Dockers official MCP repository.'
 pubDate: 2024-12-01
 author: 'Leszek Pomianowski'
 image: 'https://raw.githubusercontent.com/lepoco/mcp-camunda/refs/heads/main/build/icon.png'
 tags: ['mcp', 'docker', 'camunda', 'openapi', 'ai', 'automation']
 ---
 
-I'm excited to share the story behind my latest open-source contributions: **two MCP (Model Context Protocol) servers** that have been officially published in Docker's MCP repository. This journey represents the intersection of AI, automation, and developer tooling.
+I recently built two MCP (Model Context Protocol) servers that have been added to Docker's official MCP repository. The idea was to make AI assistants work better with business tools like Camunda process engines and OpenAPI specifications.
 
-## 🤖 What is MCP?
+## What MCP Solves
 
-The **Model Context Protocol** is a new standard that enables AI assistants to securely connect with external data sources and tools. It's like giving AI the ability to interact with your existing systems and workflows in a structured, secure way.
+The Model Context Protocol is a way for AI assistants to connect with external systems securely. Instead of the AI just knowing what's in its training data, it can interact with live business systems, databases, and APIs in real-time.
 
-## 🐳 Official Docker Recognition
+Think of it like giving Claude or ChatGPT the ability to check your Camunda workflows, trigger processes, or understand your API documentation without you having to copy-paste everything into the chat.
 
-Both of my MCP servers are now part of the **official Docker MCP repository**:
+## The Two Servers
 
-### 1. Camunda MCP Server
-- **Docker Image**: `mcp/camunda`
-- **GitHub**: [lepoco/mcp-camunda](https://github.com/lepoco/mcp-camunda)
-- **Purpose**: Interact with Camunda 7 Community Edition Engine
+Both servers are now available as official Docker images:
 
-### 2. OpenAPI MCP Server  
-- **Docker Image**: `mcp/openapi`
-- **GitHub**: [lepoco/openapi.client](https://github.com/lepoco/openapi.client)
-- **Purpose**: Work with OpenAPI/Swagger specifications
+**Camunda MCP Server** (`mcp/camunda`) connects AI assistants to Camunda 7 Community Edition processes. You can find the code at lepoco/mcp-camunda on GitHub.
 
-## 🔧 Camunda MCP Server
+**OpenAPI MCP Server** (`mcp/openapi`) helps AI assistants understand and work with OpenAPI/Swagger specifications. The code is at lepoco/openapi.client on GitHub.
 
-The Camunda MCP Server bridges AI assistants with Camunda's powerful process engine, offering **12 specialized tools**:
+## Camunda Integration
 
-### Core Capabilities
-- **Process Management**: List, count, and monitor BPMN process instances
-- **Task Operations**: Complete user tasks and manage workflows
-- **Incident Handling**: Monitor and resolve process incidents
-- **Variable Management**: Access and manipulate process variables
-- **Message Integration**: Send messages to running processes
+The Camunda server provides 12 tools for interacting with process engines. It handles process management like listing and monitoring BPMN instances, task operations for completing user tasks, incident handling for monitoring and resolving issues, variable management for accessing process data, and message integration for sending messages to running processes.
 
-### Example Usage
 ```json
 {
   "mcpServers": {
