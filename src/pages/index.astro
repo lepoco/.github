@@ -11,37 +11,29 @@ const posts = (await getCollection('posts'))
 <BaseLayout title="Leszek Pomianowski - lepo.co">
   <div class="index-content framed">
     <h1 id="hello-there">Hello there!</h1>
-    <p>Welcome to my personal space! I'm <strong><a href="https://github.com/pomianowski">Leszek Pomianowski</a></strong> (<a href="https://github.com/lepoco">lepo.co</a>), a passionate .NET developer and open-source contributor from Poland.</p>
+    <p>I'm <strong><a href="https://github.com/pomianowski">Leszek Pomianowski</a></strong>, a .NET developer from Poland. I work on distributed systems and build tools that other developers seem to find useful.</p>
     
     <h2>What I do</h2>
-    <p>I create modern, beautiful applications and tools that make developers' lives easier. My work focuses on bringing modern Windows 11 design to traditional .NET frameworks.</p>
+    <p>I spend my time working with .NET applications - modernizing legacy systems, building microservices, and figuring out how to make things scale. I work with Docker, RabbitMQ, gRPC, and mess around with newer stuff like .NET 10, Aspire, and Marten. I also build WPF applications and contribute to open-source projects when I can.</p>
     
-    <h2>Key Projects</h2>
+    <h2>Things I've Built</h2>
     <ul>
-      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - Modern Fluent Design controls for WPF (.NET Framework & .NET) with 8.8k+ stars</li>
-      <li><strong><a href="https://apps.microsoft.com/detail/9nh1p86h06cg">Radiograph</a></strong> - Universal computer monitoring application built with WPF UI and LibreHardwareMonitor, installed on 65,000+ computers</li>
-      <li><strong><a href="https://github.com/lepoco/mcp-camunda">MCP Camunda</a></strong> - Official Docker MCP server for Camunda BPM process engine</li>
-      <li><strong><a href="https://github.com/lepoco/openapi.client">OpenAPI MCP</a></strong> - Official Docker MCP server for OpenAPI/Swagger tooling</li>
+      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - Modern Windows controls for WPF that somehow ended up in Microsoft PowerToys</li>
+      <li><strong><a href="https://apps.microsoft.com/detail/9nh1p86h06cg">Radiograph</a></strong> - Hardware monitoring app that's been downloaded quite a bit</li>
+      <li><strong><a href="https://github.com/lepoco/mcp-camunda">Camunda MCP</a></strong> - Server for connecting AI tools to Camunda workflows</li>
+      <li><strong><a href="https://github.com/lepoco/openapi.client">OpenAPI MCP</a></strong> - Server for working with API specs, now in Docker's official repo</li>
     </ul>
     
-    <h2>Achievements</h2>
-    <ul>
-      <li><strong>Microsoft Collaboration</strong> - Working with Microsoft's WPF team to integrate WPF UI into .NET 9</li>
-      <li><strong>PowerToys</strong> - My WPF UI library powers (visually) Microsoft PowerToys Run, one of GitHub's most popular developer tools</li>
-      <li><strong>Official Docker MCP</strong> - Both my MCP servers are published in the official Docker MCP repository</li>
-      <li><strong>Open Source Contributor</strong> - Contributing to LibreHardwareMonitor (SMBIOS enhancements) and other community projects</li>
-      <li><strong>Community Impact</strong> - WPF UI was downloaded more than 600,000 times and has 89 contributors</li>
-    </ul>
+    <h2>Day Job</h2>
+    <p>I work on enterprise software - the kind that needs to handle lots of users and keep running. Mostly energy sector stuff, dealing with legacy systems that need updating without breaking everything. It involves distributed architecture and making sure things actually work at scale.</p>
     
-    <h2>Open to Collaboration</h2>
-    <p>I'm always interested in collaborating on innovative projects, especially those involving .NET development, modern UI frameworks, or developer tooling. Whether you're looking for technical expertise, open-source contributions, or professional consulting, I'd love to hear about your project.</p>
+    <h2>If You Want to Chat</h2>
+    <p>I'm interested in collaborating on cool projects, especially anything involving .NET architecture, distributed systems, or developer tools. I work with various teams on technical challenges and enjoy solving interesting problems.</p>
     
-    <p>Find me on <a href="https://github.com/lepoco">GitHub</a>, support my work through <a href="https://github.com/sponsors/pomianowski">GitHub Sponsors</a>, or <a href="/contact/">get in touch</a> to discuss collaboration opportunities.</p>
+    <p>You can find my stuff on <a href="https://github.com/lepoco">GitHub</a>, support my work through <a href="https://github.com/sponsors/pomianowski">GitHub Sponsors</a>, or <a href="/contact/">drop me a line</a> if you want to chat about a project.</p>
   </div>
   
   <div class="posts">
     {posts.map((post) => <PostCard post={post} />)}
-  </div>
-</BaseLayout>
   </div>
 </BaseLayout>
