@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Leszek Pomianowski">
+  <div class="page">
+    <h1>About Me</h1>
+    <p>
+      Hi! I'm Leszek Pomianowski, a .NET developer from Poland. I work on distributed systems 
+      and like building tools that other developers find useful. I'm probably best known for 
+      WPF UI, which somehow ended up being used by Microsoft PowerToys.
+    </p>
+    
+    <h2>What I Do</h2>
+    <p>
+      I spend most of my time working with .NET applications - modernizing legacy systems, 
+      building microservices, and figuring out how to make things scale. I work with Docker, 
+      RabbitMQ, gRPC, event sourcing with Marten, and various other technologies that keep 
+      distributed systems running.
+    </p>
+    
+    <p>
+      I've been experimenting with .NET 10, Aspire for orchestration, and E2E testing with 
+      Playwright. Recently I've been exploring AI tools like GitHub Copilot and Cursor to 
+      see how they can make development more efficient.
+    </p>
+    
+    <h2>Projects I've Built</h2>
+    
+    <h3>WPF UI</h3>
+    <p>
+      A library that makes WPF applications look like they belong on modern Windows. It started 
+      as a personal project because I was tired of WPF apps looking dated. It's been downloaded 
+      quite a bit and is used by Microsoft PowerToys Run. Microsoft even worked with me to get 
+      some of it into the official .NET framework.
+    </p>
+    
+    <h3>Radiograph</h3>
+    <p>
+      A hardware monitoring app on the Microsoft Store. Built it with WPF UI and LibreHardwareMonitor 
+      to monitor system temperatures and performance. It has a decent rating and is installed on 
+      quite a few computers.
+    </p>
+    
+    <h3>MCP Servers</h3>
+    <p>
+      I built two Model Context Protocol servers that ended up in Docker's official repository:
+      one for Camunda process engines and another for OpenAPI specifications. They help AI assistants 
+      work with business tools and API documentation.
+    </p>
+    
+    <h2>Day Job Stuff</h2>
+    <p>
+      I work on enterprise software - the kind that handles lots of users and has to keep running. 
+      Mostly energy sector stuff, dealing with legacy systems that need to be modernized without 
+      breaking everything. It involves a lot of distributed architecture and making sure things 
+      scale properly.
+    </p>
+    
+    <h2>Other Things</h2>
+    <p>
+      I contribute to LibreHardwareMonitor when I can, mostly working on SMBIOS stuff. I maintain 
+      some Azure DevOps extensions and help migrate old ASP.NET services to modern architectures 
+      when needed.
+    </p>
+    
+    <p>
+      I have a CS degree and some NVIDIA certification for NLP work. When I'm not coding, I play 
+      games (big fan of The Witcher), design circuit boards as a hobby, and mess around with 
+      Home Assistant for smart home automation.
+    </p>
+    
+    <h2>If You Want to Collaborate</h2>
+    <p>
+      I'm interested in working on cool projects, especially if they involve .NET architecture, 
+      distributed systems, or developer tools. I work with various teams on technical challenges 
+      and enjoy solving interesting problems.
+    </p>
+    
+    <p>
+      You can check out my stuff on <a href="https://github.com/lepoco" target="_blank" rel="noopener">GitHub</a> 
+      or <a href="/contact/">drop me a line</a> if you want to chat about a project.
+    </p>
+  </div>
+</BaseLayout></li>
+<style>
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  
+  .page h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .page p {
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+</style>

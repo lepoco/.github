@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Leszek Pomianowski - lepo.co">
+  <div class="index-content framed">
+    <h1 id="hello-there">Hello there!</h1>
+    <p>I'm <strong><a href="https://github.com/pomianowski">Leszek Pomianowski</a></strong>, a .NET developer from Poland. I work on distributed systems and build tools that other developers seem to find useful.</p>
+    
+    <h2>What I do</h2>
+    <p>I spend my time working with .NET applications - modernizing legacy systems, building microservices, and figuring out how to make things scale. I work with Docker, RabbitMQ, gRPC, and mess around with newer stuff like .NET 10, Aspire, and Marten. I also build WPF applications and contribute to open-source projects when I can.</p>
+    
+    <h2>Things I've Built</h2>
+    <ul>
+      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - Modern Windows controls for WPF that somehow ended up in Microsoft PowerToys</li>
+      <li><strong><a href="https://apps.microsoft.com/detail/9nh1p86h06cg">Radiograph</a></strong> - Hardware monitoring app that's been downloaded quite a bit</li>
+      <li><strong><a href="https://github.com/lepoco/mcp-camunda">Camunda MCP</a></strong> - Server for connecting AI tools to Camunda workflows</li>
+      <li><strong><a href="https://github.com/lepoco/openapi.client">OpenAPI MCP</a></strong> - Server for working with API specs, now in Docker's official repo</li>
+    </ul>
+    
+    <h2>Day Job</h2>
+    <p>I work on enterprise software - the kind that needs to handle lots of users and keep running. Mostly energy sector stuff, dealing with legacy systems that need updating without breaking everything. It involves distributed architecture and making sure things actually work at scale.</p>
+    
+    <h2>If You Want to Chat</h2>
+    <p>I'm interested in collaborating on cool projects, especially anything involving .NET architecture, distributed systems, or developer tools. I work with various teams on technical challenges and enjoy solving interesting problems.</p>
+    
+    <p>You can find my stuff on <a href="https://github.com/lepoco">GitHub</a>, support my work through <a href="https://github.com/sponsors/pomianowski">GitHub Sponsors</a>, or <a href="/contact/">drop me a line</a> if you want to chat about a project.</p>
+  </div>
+  
+  <div class="posts">
+    {posts.map((post) => <PostCard post={post} />)}
+  </div>
+</BaseLayout>
