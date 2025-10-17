@@ -1,73 +1,26 @@
 {
-  "name": "lepo.dev",
-  "version": "8.0.0",
-  "private": true,
+  "name": "astro-theme-terminal",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A terminal-inspired theme for Astro, ported from Hugo Terminal Theme by panr",
+  "license": "MIT",
+  "author": "Dennis Klappe",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennisklappe/astro-theme-terminal"
+  },
+  "keywords": ["astro", "theme", "terminal", "blog", "monospace", "retro"],
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "react-scripts": "^5.0.0"
+    "astro": "^5.13.2"
   },
   "devDependencies": {
-    "@types/jest": "^27.4.0",
-    "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-router-dom": "^5.3.3",
-    "@types/three": "^0.138.0",
-    "dotenv": "^16.4.5",
-    "eslint": "^8.9.0",
-    "eslint-config-react-app": "^7.0.0",
-    "eslint-plugin-flowtype": "^8.0.3",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0",
-    "jest": "^27.5.1",
-    "node-sass": "^7.0.1",
-    "react": "^17.0.2",
-    "react-app-rewired": "^2.2.1",
-    "react-dom": "^17.0.2",
-    "react-query": "^3.34.16",
-    "react-router-dom": "^6.2.1",
-    "three": "^0.138.3",
-    "typed.js": "^2.0.12",
-    "typescript": "^4.5.4",
-    "webpack-subresource-integrity": "^5.1.0",
-    "workbox-background-sync": "^6.5.1",
-    "workbox-broadcast-update": "^6.5.1",
-    "workbox-cacheable-response": "^6.5.1",
-    "workbox-core": "^6.5.1",
-    "workbox-expiration": "^6.5.1",
-    "workbox-google-analytics": "^6.5.1",
-    "workbox-navigation-preload": "^6.5.1",
-    "workbox-precaching": "^6.5.1",
-    "workbox-range-requests": "^6.5.1",
-    "workbox-routing": "^6.5.1",
-    "workbox-strategies": "^6.5.1",
-    "workbox-streams": "^6.5.1"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "scripts": {
-    "start": "PORT=16731 react-scripts start",
-    "build": "react-scripts build",
-    "dev": "node -r dotenv/config react-scripts start",
-    "test": "react-scripts test --env=jsdom --verbose false --silent=false",
-    "eject": "react-scripts eject",
-    "lint": "eslint ./src/"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@astrojs/sitemap": "^3.2.2",
+    "@astrojs/rss": "^4.0.11"
   }
 }
