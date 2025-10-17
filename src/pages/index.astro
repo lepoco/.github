@@ -8,22 +8,38 @@ const posts = (await getCollection('posts'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Terminal">
+<BaseLayout title="Leszek Pomianowski - lepoco">
   <div class="index-content framed">
     <h1 id="hello-there">Hello there!</h1>
-    <p>Welcome to the Astro Terminal theme! This is a port of the popular Hugo Terminal theme by panr, bringing the same retro terminal aesthetic to Astro.</p>
-    <p>
-      You can customise the colour scheme using panr's <a href="https://panr.github.io/terminal-css/"><strong>Terminal.css</strong></a> 
-      generator - all generated schemes are fully compatible with this theme.
-    </p>
-    <p>
-      <a href="https://panr.github.io/terminal-css/">
-        <img src="https://panr.github.io/hugo-theme-terminal-demo/img/terminal-css.png" alt="Terminal.css Preview" />
-      </a>
-    </p>
+    <p>Welcome to my personal space! I'm <strong><a href="https://github.com/pomianowski">Leszek Pomianowski</a></strong> (<a href="https://github.com/lepoco">lepo.co</a>), a passionate .NET developer and open-source contributor from Poland.</p>
+    
+    <h2>What I do</h2>
+    <p>I create modern, beautiful applications and tools that make developers' lives easier. My work focuses on bringing modern Windows 11 design to traditional .NET frameworks.</p>
+    
+    <h2>Key Projects</h2>
+    <ul>
+      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - Modern Fluent Design controls for WPF (.NET Framework & .NET) with 8.8k+ stars</li>
+      <li><strong><a href="https://github.com/lepoco/mcp-camunda">MCP Camunda</a></strong> - Official Docker MCP server for Camunda BPM process engine</li>
+      <li><strong><a href="https://github.com/lepoco/openapi.client">OpenAPI MCP</a></strong> - Official Docker MCP server for OpenAPI/Swagger tooling</li>
+    </ul>
+    
+    <h2>Achievements</h2>
+    <ul>
+      <li><strong>Microsoft Collaboration</strong> - Working with Microsoft's WPF team to integrate WPF UI into .NET 9</li>
+      <li><strong>PowerToys</strong> - My WPF UI library powers (visually) Microsoft PowerToys Run, one of GitHub's most popular developer tools</li>
+      <li><strong>Official Docker MCP</strong> - Both my MCP servers are published in the official Docker MCP repository</li>
+      <li><strong>Community Impact</strong> - WPF UI was downloaded more than 600,000 times and has 89 contributors</li>
+    </ul>
+    
+    <h2>Open to Collaboration</h2>
+    <p>I'm always interested in collaborating on innovative projects, especially those involving .NET development, modern UI frameworks, or developer tooling. Whether you're looking for technical expertise, open-source contributions, or professional consulting, I'd love to hear about your project.</p>
+    
+    <p>Find me on <a href="https://github.com/lepoco">GitHub</a>, support my work through <a href="https://github.com/sponsors/lepoco">GitHub Sponsors</a>, or <a href="/contact/">get in touch</a> to discuss collaboration opportunities.</p>
   </div>
   
   <div class="posts">
     {posts.map((post) => <PostCard post={post} />)}
+  </div>
+</BaseLayout>
   </div>
 </BaseLayout>
