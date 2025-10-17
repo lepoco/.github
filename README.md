@@ -1,4 +1,4 @@
-# lepoco.dev - Personal Blog & Portfolio
+# lepo.co - Personal Blog & Portfolio
 
 Welcome to the source code of my personal website and blog! This is where I share my journey as a .NET developer, open-source contributor, and creator of WPF UI.
 
@@ -57,12 +57,12 @@ All blog posts are written in Markdown and stored in `src/content/posts/`. The s
 
 ## 🌐 Live Site
 
-Visit the live site at [lepoco.dev](https://lepoco.dev) to see my latest projects and blog posts.
+Visit the live site at [lepo.co](https://lepo.co) to see my latest projects and blog posts.
 
 ## 📞 Connect
 
 - **GitHub**: [@lepoco](https://github.com/lepoco)
-- **Sponsors**: [GitHub Sponsors](https://github.com/sponsors/lepoco)
+- **Sponsors**: [GitHub Sponsors](https://github.com/sponsors/pomianowski)
 - **Professional Support**: [lepo.co](https://lepo.co/support)
 
 ---

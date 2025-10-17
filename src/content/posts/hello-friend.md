@@ -9,13 +9,13 @@ tags: ['introduction', 'wpf', 'dotnet', 'open-source']
 
 Welcome to my corner of the internet! I'm **Leszek Pomianowski**, though you might know me better as **lepoco** on GitHub. This space is where I share my passion for .NET development, open-source contributions, and building tools that make developers' lives easier.
 
-## 🎯 My Mission
+## My Mission
 
 > "Code is not just about solving problems - it's about creating beautiful, intuitive experiences that developers actually want to use."
 
 I believe that developer tools should be both powerful and beautiful. That's why I've dedicated my career to bridging the gap between functionality and aesthetics, particularly in the Windows development ecosystem.
 
-## 🚀 What You'll Find Here
+## What You'll Find Here
 
 This blog is my way of sharing the journey - the successes, the challenges, and everything I learn along the way. You can expect posts about:
 
@@ -25,7 +25,7 @@ This blog is my way of sharing the journey - the successes, the challenges, and 
 - **MCP Servers** - Building AI-powered development tools
 - **Community Building** - How open source creates amazing opportunities
 
-## 💡 The Philosophy Behind My Work
+## The Philosophy Behind My Work
 
 Every project I work on is guided by a few core principles:
 
@@ -38,7 +38,7 @@ The best software is built by communities, not individuals. Every contribution, 
 ### Modern Standards
 Why settle for outdated experiences when we can build something that feels native to today's platforms?
 
-## 🔥 Current Focus
+## Current Focus
 
 Right now, I'm excited about several ongoing projects:
 
@@ -47,7 +47,7 @@ Right now, I'm excited about several ongoing projects:
 - **Microsoft Partnership** - Helping integrate community innovations into official frameworks
 - **Community Growth** - Supporting the next generation of open-source contributors
 
-## 🤝 Join the Community
+## Join the Community
 
 Development is better when we do it together. Here's how you can be part of the journey:
 
@@ -56,15 +56,15 @@ Development is better when we do it together. Here's how you can be part of the 
 - **Contribute** - Every pull request makes the ecosystem stronger
 - **Sponsor** - Support sustainable open-source development
 
-## 📬 Stay Connected
+## Stay Connected
 
 This blog is just one way we can connect. You can also find me:
 
 - **GitHub**: [@lepoco](https://github.com/lepoco) - Where the code lives
-- **Sponsor**: [GitHub Sponsors](https://github.com/sponsors/lepoco) - Supporting the mission
+- **Sponsor**: [GitHub Sponsors](https://github.com/sponsors/pomianowski) - Supporting the mission
 - **Projects**: [lepo.co](https://lepo.co) - Professional support and services
 
-## 🌟 What's Next?
+## What's Next?
 
 The future is incredibly exciting. We're at a unique moment where AI, modern design, and community collaboration are converging to create better developer experiences than ever before.
 
