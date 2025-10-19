@@ -77,6 +77,12 @@
   padding: 20px;
 }
 
+.post-cover picture img {
+  border: 10px solid var(--accent);
+  background: transparent;
+  padding: 20px;
+}
+
 .post ul {
   list-style: none;
 }
