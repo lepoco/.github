@@ -11,6 +11,7 @@ export interface Props {
       author?: string;
       tags?: string[];
       image?: string;
+      avifImage?: string;
       externalLink?: string;
     };
   };
@@ -45,9 +46,12 @@ const isExternal = !!post.data.externalLink;
       ))}
     </span>
   )}
-  {post.data.image && (
+  {post.data.avifImage && (
     <figure class="post-cover">
-      <img src={post.data.image} alt={post.data.title} />
+      <picture>
+        <source type="image/avif" srcset={post.data.avifImage} />
+        <img src={post.data.image} alt={post.data.title} />
+      </picture>
     </figure>
   )}
   {post.data.description && (

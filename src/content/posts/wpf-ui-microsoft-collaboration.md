@@ -3,7 +3,8 @@ title: 'WPF UI and Microsoft: An Unexpected Collaboration'
 description: 'How a personal project to modernize WPF applications caught Microsoft attention and led to official collaboration on .NET 9.'
 pubDate: 2024-01-15
 author: 'Leszek Pomianowski'
-image: 'https://opengraph.githubassets.com/351a1aec13d918e77632605b8c99db5d240249e27024ca5d1dad1070924b5502/dotnet/wpf/discussions/8533'
+image: 'https://lepo.co/wpf-collaboration-full.png'
+avifImage: 'https://lepo.co/wpf-collaboration-full.avif'
 tags: ['wpf', 'microsoft', 'dotnet', 'collaboration', 'open-source']
 ---
 

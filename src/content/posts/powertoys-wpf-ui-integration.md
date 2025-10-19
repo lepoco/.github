@@ -3,7 +3,8 @@ title: 'How WPF UI Powers Microsoft PowerToys Run'
 description: 'The story behind WPF UI becoming the foundation for Microsoft PowerToys Run, one of GitHubs most popular developer tools.'
 pubDate: 2024-06-15
 author: 'Leszek Pomianowski'
-image: 'https://github.com/microsoft/PowerToys/raw/main/doc/images/readme/pt-hero.dark.png'
+image: 'https://lepo.co/pt-hero.dark.png'
+avifImage: 'https://lepo.co/pt-hero.dark.avif'
 tags: ['powertoys', 'microsoft', 'wpf', 'developer-tools', 'open-source']
 ---
 
