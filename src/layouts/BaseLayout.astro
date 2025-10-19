@@ -56,11 +56,10 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
             <li>
               <ul class="menu__dropdown">
                 <li><a href={`${base}about/`}>About</a></li>
-                <li><a href={`${base}contact/`}>Contact</a></li>
-                <li><a href={`${base}support/`}>Support</a></li>
                 <li><a href={`${base}posts/`}>Blog</a></li>
+                <li><a href={`${base}support/`}>Support</a></li>
+                <li><a href={`${base}contact/`}>Contact</a></li>
                 <li><a href={`${base}tags/`}>Tags</a></li>
-                <li><a href="https://github.com/lepoco/wpfui" target="_blank">WPF UI</a></li>
                 <li><a href="https://github.com/lepoco" target="_blank">GitHub</a></li>
                 <li><a href="https://github.com/sponsors/pomianowski" target="_blank">Sponsor</a></li>
               </ul>
@@ -71,9 +70,9 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         <nav class="navigation-menu">
           <ul class="navigation-menu__inner menu--desktop">
             <li><a href={`${base}about/`}>About</a></li>
-            <li><a href={`${base}contact/`}>Contact</a></li>
-            <li><a href={`${base}support/`}>Support</a></li>
             <li><a href={`${base}posts/`}>Blog</a></li>
+            <li><a href={`${base}support/`}>Support</a></li>
+            <li><a href={`${base}contact/`}>Contact</a></li>
             <li><a href={`${base}tags/`}>Tags</a></li>
             <li>
               <ul class="menu">
@@ -102,7 +101,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       <footer class="footer">
         <div class="footer__inner">
           <div class="copyright">
-            <span>© 2025 lepo.co <a href="https://github.com/lepoco" target="_blank">Leszek Pomianowski</a></span>
+            <span>© {new Date().getFullYear()} lepo.co <a href="https://github.com/lepoco" target="_blank">Leszek Pomianowski</a></span>
             <span class="separator">::</span>
             <span>Theme made by <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">panr</a></span>
             <span class="separator">::</span>
@@ -121,7 +120,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         // Check for saved theme preference or default to auto
         const savedTheme = localStorage.getItem('theme');
         
-        function setTheme(theme) {
+        function setTheme(theme: any) {
           if (theme === 'dark') {
             root.style.setProperty('--background', '#000000');
             root.style.setProperty('--foreground', '#ffffff');

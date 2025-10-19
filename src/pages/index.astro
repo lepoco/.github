@@ -18,15 +18,11 @@ const posts = (await getCollection('posts'))
     
     <h2>Things I've Built</h2>
     <ul>
-      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - Modern Windows controls for WPF that somehow ended up in Microsoft PowerToys</li>
+      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - Modern Windows controls for WPF that somehow ended up in Microsoft PowerToys and official WPF repo</li>
       <li><strong><a href="https://apps.microsoft.com/detail/9nh1p86h06cg">Radiograph</a></strong> - Hardware monitoring app that's been downloaded quite a bit</li>
-      <li><strong><a href="https://github.com/lepoco/mcp-camunda">Camunda MCP</a></strong> - Server for connecting AI tools to Camunda workflows</li>
-      <li><strong><a href="https://github.com/lepoco/openapi.client">OpenAPI MCP</a></strong> - Server for working with API specs, now in Docker's official repo</li>
+      <li><strong><a href="https://github.com/lepoco/mcp-camunda">Camunda MCP</a></strong> - Server for connecting AI tools to Camunda workflows, listed in Docker's official MCP hub</li>
     </ul>
-    
-    <h2>Day Job</h2>
-    <p>I work on enterprise software - the kind that needs to handle lots of users and keep running. Mostly energy sector stuff, dealing with legacy systems that need updating without breaking everything. It involves distributed architecture and making sure things actually work at scale.</p>
-    
+
     <h2>If You Want to Chat</h2>
     <p>I'm interested in collaborating on cool projects, especially anything involving .NET architecture, distributed systems, or developer tools. I work with various teams on technical challenges and enjoy solving interesting problems.</p>
     
@@ -34,6 +30,9 @@ const posts = (await getCollection('posts'))
   </div>
   
   <div class="posts">
+    <div>
+      <h4 class="post-title">Recent posts:</h4>
+    </div>
     {posts.map((post) => <PostCard post={post} />)}
   </div>
 </BaseLayout>
