@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslations } from '../../i18n/utils';
+import { defaultLang, type Lang } from '../../i18n/ui';
+
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
+
+const posts = (await getCollection('posts'))
+  .filter(post => !post.data.draft && post.id.startsWith('pl/'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title={t('index.title')}>
+  <div class="index-content framed">
+    <h1 id="hello-there">{t('index.hello')}</h1>
+    <p set:html={t('index.intro')} />
+    
+    <h2>{t('index.whatIDo')}</h2>
+    <p>{t('index.whatIDoText')}</p>
+    
+    <h2>{t('index.thingsBuilt')}</h2>
+    <ul>
+      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - {t('index.wpfui')}</li>
+      <li><strong><a href="https://apps.microsoft.com/detail/9nh1p86h06cg">Radiograph</a></strong> - {t('index.radiograph')}</li>
+      <li><strong><a href="https://github.com/lepoco/mcp-camunda">Camunda MCP</a></strong> - {t('index.camunda')}</li>
+    </ul>
+
+    <h2>{t('index.wantToChat')}</h2>
+    <p>{t('index.wantToChatText')}</p>
+    
+    <p set:html={t('index.findMe').replace('{contactUrl}', getRelativeLocaleUrl(lang, 'contact'))} />
+  </div>
+  
+  <div class="posts">
+    <div>
+      <h4 class="post-title">{t('post.recentPosts')}</h4>
+    </div>
+    {posts.map((post) => <PostCard post={post} />)}
+  </div>
+</BaseLayout>

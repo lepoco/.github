@@ -1,37 +1,43 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
 import { getCollection } from 'astro:content';
+import { useTranslations } from '../i18n/utils';
+import { defaultLang, type Lang } from '../i18n/ui';
+
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
 
 const posts = (await getCollection('posts'))
-  .filter(post => !post.data.draft)
+  .filter(post => !post.data.draft && post.id.startsWith('en/'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Leszek Pomianowski - lepo.co">
+<BaseLayout title={t('index.title')}>
   <div class="index-content framed">
-    <h1 id="hello-there">Hello there!</h1>
-    <p>I'm <strong><a href="https://github.com/pomianowski">Leszek Pomianowski</a></strong>, a .NET developer from Poland. I work on distributed systems and build tools that other developers seem to find useful.</p>
+    <h1 id="hello-there">{t('index.hello')}</h1>
+    <p set:html={t('index.intro')} />
     
-    <h2>What I do</h2>
-    <p>I spend my time working with .NET applications - modernizing legacy systems, building microservices, and figuring out how to make things scale. I work with Docker, RabbitMQ, gRPC, and mess around with newer stuff like .NET 10, Aspire, and Marten. I also build WPF applications and contribute to open-source projects when I can.</p>
+    <h2>{t('index.whatIDo')}</h2>
+    <p>{t('index.whatIDoText')}</p>
     
-    <h2>Things I've Built</h2>
+    <h2>{t('index.thingsBuilt')}</h2>
     <ul>
-      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - Modern Windows controls for WPF that somehow ended up in Microsoft PowerToys and official WPF repo</li>
-      <li><strong><a href="https://apps.microsoft.com/detail/9nh1p86h06cg">Radiograph</a></strong> - Hardware monitoring app that's been downloaded quite a bit</li>
-      <li><strong><a href="https://github.com/lepoco/mcp-camunda">Camunda MCP</a></strong> - Server for connecting AI tools to Camunda workflows, listed in Docker's official MCP hub</li>
+      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - {t('index.wpfui')}</li>
+      <li><strong><a href="https://apps.microsoft.com/detail/9nh1p86h06cg">Radiograph</a></strong> - {t('index.radiograph')}</li>
+      <li><strong><a href="https://github.com/lepoco/mcp-camunda">Camunda MCP</a></strong> - {t('index.camunda')}</li>
     </ul>
 
-    <h2>If You Want to Chat</h2>
-    <p>I'm interested in collaborating on cool projects, especially anything involving .NET architecture, distributed systems, or developer tools. I work with various teams on technical challenges and enjoy solving interesting problems.</p>
+    <h2>{t('index.wantToChat')}</h2>
+    <p>{t('index.wantToChatText')}</p>
     
-    <p>You can find my stuff on <a href="https://github.com/lepoco">GitHub</a>, support my work through <a href="https://github.com/sponsors/pomianowski">GitHub Sponsors</a>, or <a href="/contact/">drop me a line</a> if you want to chat about a project.</p>
+    <p set:html={t('index.findMe').replace('{contactUrl}', getRelativeLocaleUrl(lang, 'contact'))} />
   </div>
   
   <div class="posts">
     <div>
-      <h4 class="post-title">Recent posts:</h4>
+      <h4 class="post-title">{t('post.recentPosts')}</h4>
     </div>
     {posts.map((post) => <PostCard post={post} />)}
   </div>

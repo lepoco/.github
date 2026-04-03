@@ -1,9 +1,12 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import FormattedDate from './FormattedDate.astro';
+import { useTranslations } from '../i18n/utils';
+import { defaultLang, type Lang } from '../i18n/ui';
 
 export interface Props {
   post: {
-    slug: string;
+    id: string;
     data: {
       title: string;
       description?: string;
@@ -15,11 +18,14 @@ export interface Props {
       externalLink?: string;
     };
   };
+  lang?: Lang;
 }
 
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
 const { post } = Astro.props;
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
-const postUrl = post.data.externalLink || `${base}posts/${post.slug}/`;
+const slug = post.id.replace(/^(en|pl)\//, '');
+const postUrl = post.data.externalLink || getRelativeLocaleUrl(lang, `posts/${slug}`);
 const isExternal = !!post.data.externalLink;
 ---
 
@@ -31,7 +37,7 @@ const isExternal = !!post.data.externalLink;
   </h2>
   <div class="post-meta">
     <time class="post-date">
-      <FormattedDate date={post.data.pubDate} />
+      <FormattedDate date={post.data.pubDate} lang={lang} />
     </time>
     {post.data.author && (
       <span class="post-author">{post.data.author}</span>
@@ -41,7 +47,7 @@ const isExternal = !!post.data.externalLink;
     <span class="post-tags">
       {post.data.tags.map((tag, index) => (
         <>
-          <a href={`${base}tags/${tag}/`}>{tag}</a>{index < post.data.tags.length - 1 && ', '}
+          <a href={getRelativeLocaleUrl(lang, `tags/${tag}`)}>{tag}</a>{index < post.data.tags.length - 1 && ', '}
         </>
       ))}
     </span>
@@ -61,7 +67,7 @@ const isExternal = !!post.data.externalLink;
   )}
   <div>
     <a href={postUrl} class="read-more button inline" target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener" : undefined}>
-      [Read more]
+      {t('post.readMore')}
     </a>
   </div>
 </article>

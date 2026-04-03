@@ -1,6 +1,9 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import BaseLayout from './BaseLayout.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import { useTranslations } from '../i18n/utils';
+import { defaultLang, type Lang } from '../i18n/ui';
 
 export interface Props {
   title: string;
@@ -10,10 +13,12 @@ export interface Props {
   author?: string;
   image?: string;
   tags?: string[];
+  lang?: Lang;
 }
 
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
 const { title, description, pubDate, updatedDate, author, image, tags = [] } = Astro.props;
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 ---
 
 <BaseLayout title={title} description={description} image={image}>
@@ -22,20 +27,20 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     
     <div class="post-meta">
       <time>
-        <FormattedDate date={pubDate} />
+        <FormattedDate date={pubDate} lang={lang} />
       </time>
       {author && (
         <span class="post-author">{author}</span>
       )}
       {updatedDate && (
         <span class="post-updated">
-          Updated: <FormattedDate date={updatedDate} />
+          {t('post.updated')} <FormattedDate date={updatedDate} lang={lang} />
         </span>
       )}
       {tags.length > 0 && (
         <span class="post-tags">
           {tags.map((tag) => (
-            <a href={`${base}tags/${tag}/`}>{tag}</a>
+            <a href={getRelativeLocaleUrl(lang, `tags/${tag}`)}>{tag}</a>
           ))}
         </span>
       )}
@@ -72,15 +77,16 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         if (navigator.clipboard) {
           const button = document.createElement('button');
           button.className = 'copy-button';
-          button.textContent = 'Copy';
+          button.textContent = document.documentElement.lang === 'pl' ? 'Kopiuj' : 'Copy';
           
           button.addEventListener('click', async () => {
             const code = block.textContent || '';
+            const isPl = document.documentElement.lang === 'pl';
             try {
               await navigator.clipboard.writeText(code);
-              button.textContent = 'Copied';
+              button.textContent = isPl ? 'Skopiowano' : 'Copied';
               setTimeout(() => {
-                button.textContent = 'Copy';
+                button.textContent = isPl ? 'Kopiuj' : 'Copy';
               }, 1000);
             } catch (err) {
               console.error('Failed to copy:', err);

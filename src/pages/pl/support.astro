@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import { defaultLang, type Lang } from '../../i18n/ui';
+
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t('support.title')}>
+  <div class="page">
+    <h1>{t('support.heading')}</h1>
+    <p>{t('support.intro')}</p>
+    
+    <h2>{t('support.whatICanHelp')}</h2>
+    
+    <h3>{t('support.consulting')}</h3>
+    <p>{t('support.consultingText')}</p>
+    
+    <h3>{t('support.guidance')}</h3>
+    <p>{t('support.guidanceText')}</p>
+    
+    <h2>{t('support.howItWorks')}</h2>
+    <p>{t('support.howItWorksText1')}</p>
+    <p>{t('support.howItWorksText2')}</p>
+    
+    <h2>{t('support.whatIDontDo')}</h2>
+    <p>{t('support.whatIDontDoText')}</p>
+    
+    <h2>{t('support.gettingStarted')}</h2>
+    <p set:html={t('support.gettingStartedText1')} />
+    <p>{t('support.gettingStartedText2')}</p>
+    
+    <h2>{t('support.tech')}</h2>
+    <p>{t('support.techText1')}</p>
+    <p>{t('support.techText2')}</p>
+  </div>
+</BaseLayout>
+<style>
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .page h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .page h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .page p {
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+</style>

@@ -1,22 +1,35 @@
 ---
+import { getRelativeLocaleUrl, getAbsoluteLocaleUrl } from 'astro:i18n';
+import { useTranslations } from '../i18n/utils';
+import { defaultLang, type Lang } from '../i18n/ui';
+
 export interface Props {
   title: string;
   description?: string;
   image?: string;
+  lang?: Lang;
 }
 
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
 const { title, description = 'Leszek Pomianowski - .NET developer, open-source contributor, creator of WPF UI', image } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+const altLang = lang === 'en' ? 'pl' : 'en';
+
+// Strip the current locale prefix from the path to get the base route
+const currentPath = Astro.url.pathname.replace(/^\/(pl)(\/|$)/, '/').replace(/\/$/, '') || '/';
+const pathSegment = currentPath === '/' ? '' : currentPath.replace(/^\//, '');
+const altUrl = new URL(getRelativeLocaleUrl(altLang, pathSegment), Astro.site);
+const defaultUrl = new URL(getRelativeLocaleUrl(defaultLang, pathSegment), Astro.site);
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} /> -->
-    <link rel="alternate icon" type="image/x-icon" href={`${base}favicon.ico`} />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     
     <!-- Preload and load Fira Code font optimally -->
@@ -27,6 +40,11 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Hreflang alternates -->
+    <link rel="alternate" hreflang={lang} href={canonicalURL} />
+    <link rel="alternate" hreflang={altLang} href={altUrl} />
+    <link rel="alternate" hreflang="x-default" href={defaultUrl} />
     
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -39,34 +57,39 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <meta name="twitter:description" content={description} />
     {image && <meta name="twitter:image" content={new URL(image, Astro.url)} />}
     
-    <link rel="sitemap" href={`${base}sitemap-index.xml`} />
-    <link rel="alternate" type="application/rss+xml" title="RSS" href={`${base}rss.xml`} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href={getRelativeLocaleUrl(lang, 'rss.xml')} />
   </head>
   <body>
     <div class="container center">
       <header class="header">
         <div class="header__inner">
           <div class="header__logo">
-            <a href={base}>
+            <a href={getRelativeLocaleUrl(lang, '')}>
               <div class="logo">
                 lepo.co
               </div>
             </a>
           </div>
-          <div class="theme-toggle" id="theme-toggle" title="Toggle theme">
-            <span class="theme-text">theme</span>
+          <div class="header__controls">
+            <a href={altUrl.pathname} class="lang-switch" title={altLang === 'pl' ? 'Polski' : 'English'}>
+              {altLang.toUpperCase()}
+            </a>
+            <div class="theme-toggle" id="theme-toggle" title={t('theme.toggleTitle')}>
+              <span class="theme-text">{t('theme.toggle')}</span>
+            </div>
           </div>
           <ul class="menu menu--mobile">
-            <li class="menu__trigger">Menu ▾</li>
+            <li class="menu__trigger">{t('nav.menuTrigger')}</li>
             <li>
               <ul class="menu__dropdown">
-                <li><a href={`${base}about/`}>About</a></li>
-                <li><a href={`${base}posts/`}>Blog</a></li>
-                <li><a href={`${base}support/`}>Support</a></li>
-                <li><a href={`${base}contact/`}>Contact</a></li>
-                <li><a href={`${base}tags/`}>Tags</a></li>
-                <li><a href="https://github.com/lepoco" target="_blank">GitHub</a></li>
-                <li><a href="https://github.com/sponsors/pomianowski" target="_blank">Sponsor</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'about')}>{t('nav.about')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'posts')}>{t('nav.blog')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'support')}>{t('nav.support')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'contact')}>{t('nav.contact')}</a></li>
+                <li><a href={getRelativeLocaleUrl(lang, 'tags')}>{t('nav.tags')}</a></li>
+                <li><a href="https://github.com/lepoco" target="_blank">{t('nav.github')}</a></li>
+                <li><a href="https://github.com/sponsors/pomianowski" target="_blank">{t('nav.sponsor')}</a></li>
               </ul>
             </li>
           </ul>
@@ -74,14 +97,14 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         
         <nav class="navigation-menu">
           <ul class="navigation-menu__inner menu--desktop">
-            <li><a href={`${base}about/`}>About</a></li>
-            <li><a href={`${base}posts/`}>Blog</a></li>
-            <li><a href={`${base}support/`}>Support</a></li>
-            <li><a href={`${base}contact/`}>Contact</a></li>
-            <li><a href={`${base}tags/`}>Tags</a></li>
+            <li><a href={getRelativeLocaleUrl(lang, 'about')}>{t('nav.about')}</a></li>
+            <li><a href={getRelativeLocaleUrl(lang, 'posts')}>{t('nav.blog')}</a></li>
+            <li><a href={getRelativeLocaleUrl(lang, 'support')}>{t('nav.support')}</a></li>
+            <li><a href={getRelativeLocaleUrl(lang, 'contact')}>{t('nav.contact')}</a></li>
+            <li><a href={getRelativeLocaleUrl(lang, 'tags')}>{t('nav.tags')}</a></li>
             <li>
               <ul class="menu">
-                <li class="menu__trigger">Projects ▾</li>
+                <li class="menu__trigger">{t('nav.projects')}</li>
                 <li>
                   <ul class="menu__dropdown">
                     <li><a href="https://github.com/lepoco/wpfui" target="_blank">WPF UI</a></li>
@@ -89,12 +112,12 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                     <li><a href="https://github.com/redfoxdb/documentdb" target="_blank">RedFox DocumentDB</a></li>
                     <li><a href="https://github.com/lepoco/openapi.client" target="_blank">OpenAPI MCP</a></li>
                     <li><a href="https://github.com/lepoco/mcp-camunda" target="_blank">Camunda MCP</a></li>
-                    <li><a href="https://github.com/lepoco" target="_blank">All Projects</a></li>
+                    <li><a href="https://github.com/lepoco" target="_blank">{t('nav.allProjects')}</a></li>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li><a href="https://github.com/sponsors/pomianowski" target="_blank">Sponsor</a></li>
+            <li><a href="https://github.com/sponsors/pomianowski" target="_blank">{t('nav.sponsor')}</a></li>
           </ul>
         </nav>
       </header>
@@ -106,11 +129,11 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       <footer class="footer">
         <div class="footer__inner">
           <div class="copyright">
-            <span>© {new Date().getFullYear()} lepo.co <a href="https://github.com/lepoco" target="_blank">Leszek Pomianowski</a></span>
+            <span>{t('footer.copyright').replace('{year}', String(new Date().getFullYear()))} <a href="https://github.com/lepoco" target="_blank">Leszek Pomianowski</a></span>
             <span class="separator">::</span>
-            <span>Theme made by <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">panr</a></span>
+            <span>{t('footer.themeMadeBy')} <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">panr</a></span>
             <span class="separator">::</span>
-            <span>Ported by <a href="https://github.com/dennisklappe">Dennis Klappe</a></span>
+            <span>{t('footer.portedBy')} <a href="https://github.com/dennisklappe">Dennis Klappe</a></span>
           </div>
         </div>
       </footer>
@@ -221,6 +244,20 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           }
         });
       })();
+
+      // Language auto-detect on first visit (homepage only)
+      (() => {
+        if (localStorage.getItem('preferred-lang')) return;
+        const path = window.location.pathname;
+        if (path !== '/' && path !== '/index.html') return;
+        const browserLang = navigator.language || navigator.languages?.[0] || '';
+        if (browserLang.startsWith('pl')) {
+          localStorage.setItem('preferred-lang', 'pl');
+          window.location.href = '/pl/';
+        } else {
+          localStorage.setItem('preferred-lang', 'en');
+        }
+      })();
     </script>
   </body>
 </html>
@@ -240,4 +277,29 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   @import "../styles/syntax.css";
   @import "../styles/gist.css";
   @import "../styles/terms.css";
+
+  .header__controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lang-switch {
+    padding: 0.25rem 0.5rem;
+    border: 2px solid var(--accent);
+    background: var(--background);
+    color: var(--accent);
+    font-family: inherit;
+    font-size: var(--font-size);
+    font-weight: 400;
+    line-height: var(--line-height);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .lang-switch:hover {
+    background: var(--accent);
+    color: var(--background);
+  }
 </style>

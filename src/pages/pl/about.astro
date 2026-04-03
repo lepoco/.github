@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslations } from '../../i18n/utils';
+import { defaultLang, type Lang } from '../../i18n/ui';
+
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t('about.title')}>
+  <div class="page">
+    <h1>{t('about.heading')}</h1>
+    <p>{t('about.intro')}</p>
+    
+    <h2>{t('about.whatIDo')}</h2>
+    <p>{t('about.whatIDoText1')}</p>
+    <p>{t('about.whatIDoText2')}</p>
+    
+    <h2>{t('about.projectsBuilt')}</h2>
+    
+    <h3>{t('about.wpfuiTitle')}</h3>
+    <p>{t('about.wpfuiText')}</p>
+    
+    <h3>{t('about.radiographTitle')}</h3>
+    <p>{t('about.radiographText')}</p>
+    
+    <h3>{t('about.mcpTitle')}</h3>
+    <p>{t('about.mcpText')}</p>
+    
+    <h2>{t('about.dayJob')}</h2>
+    <p>{t('about.dayJobText')}</p>
+    
+    <h2>{t('about.otherThings')}</h2>
+    <p>{t('about.otherThingsText1')}</p>
+    <p>{t('about.otherThingsText2')}</p>
+    
+    <h2>{t('about.collaborate')}</h2>
+    <p>{t('about.collaborateText')}</p>
+    <p set:html={t('about.findMe').replace('{contactUrl}', getRelativeLocaleUrl(lang, 'contact'))} />
+  </div>
+</BaseLayout>
+<style>
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .page h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .page p {
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+</style>

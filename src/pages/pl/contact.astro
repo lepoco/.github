@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslations } from '../../i18n/utils';
+import { defaultLang, type Lang } from '../../i18n/ui';
+
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t('contact.title')}>
+  <div class="page">
+    <h1>{t('contact.heading')}</h1>
+    <p>{t('contact.intro')}</p>
+    
+    <h2>{t('contact.email')}</h2>
+    <p set:html={t('contact.emailText')} />
+    <p>{t('contact.emailNote')}</p>
+    
+    <h2>{t('contact.professional')}</h2>
+    <p set:html={t('contact.professionalText').replace('{supportUrl}', getRelativeLocaleUrl(lang, 'support'))} />
+    
+    <h2>{t('contact.findOnline')}</h2>
+    <p>{t('contact.findOnlineText')}</p>
+    
+    <ul>
+      <li>
+        <strong>{t('contact.githubLabel')}</strong>
+        <a href="https://github.com/lepoco" target="_blank" rel="noopener">@lepoco</a> -
+        {t('contact.githubDesc')}
+      </li>
+      <li>
+        <strong>{t('contact.sponsorsLabel')}</strong>
+        <a href="https://github.com/sponsors/pomianowski" target="_blank" rel="noopener">@pomianowski</a> -
+        {t('contact.sponsorsDesc')}
+      </li>
+    </ul>
+
+    <h2>{t('contact.quickNote')}</h2>
+    <p>{t('contact.quickNoteText')}</p>
+  </div>
+</BaseLayout>
+<style>
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .page ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+  
+  .page li {
+    margin: 0.5rem 0;
+  }
+  
+  .page h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

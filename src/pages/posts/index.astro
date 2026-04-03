@@ -2,17 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
+import { useTranslations } from '../../i18n/utils';
+import { defaultLang, type Lang } from '../../i18n/ui';
+
+const lang = (Astro.currentLocale || defaultLang) as Lang;
+const t = useTranslations(lang);
 
 const posts = (await getCollection('posts'))
-  .filter(post => !post.data.draft)
+  .filter(post => !post.data.draft && post.id.startsWith('en/'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Posts">
+<BaseLayout title={t('page.posts')}>
   <div class="posts">
-    <h1 class="posts-title">Posts</h1>
+    <h1 class="posts-title">{t('page.posts')}</h1>
     {posts.length === 0 ? (
-      <p>No posts yet. Check back soon!</p>
+      <p>{t('post.noPosts')}</p>
     ) : (
       posts.map((post) => <PostCard post={post} />)
     )}

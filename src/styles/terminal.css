@@ -63,17 +63,8 @@ html {
 
 body {
   font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Roboto",
-    "Oxygen",
-    "Ubuntu",
-    "Cantarell",
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif;
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: var(--font-size);
   font-weight: 400;
   line-height: var(--line-height);
@@ -109,9 +100,18 @@ h6 {
   letter-spacing: 0;
 }
 
-h1, h2, h3, h4, h5, h6,
-p, ul, ol,
-img, figure, video,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+img,
+figure,
+video,
 table {
   margin: 25px 0;
 }
@@ -209,11 +209,8 @@ select:active {
 }
 
 select {
-  background-image: linear-gradient(
-      45deg,
-      transparent 50%,
-      var(--foreground) 50%
-    ),
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--foreground) 50%),
     linear-gradient(135deg, var(--foreground) 50%, transparent 50%);
   background-position: calc(100% - 20px), calc(100% - 15px);
   background-size:
@@ -423,8 +420,14 @@ hr {
 
 /* Bold elements */
 
-h1, h2, h3, h4, h5, h6,
-b, strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
 th,
 button {
   font-weight: 600;
