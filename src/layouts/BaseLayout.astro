@@ -73,7 +73,7 @@ const defaultUrl = new URL(getRelativeLocaleUrl(defaultLang, pathSegment), Astro
           </div>
           <div class="header__controls">
             <a href={altUrl.pathname} class="lang-switch" title={altLang === 'pl' ? 'Polski' : 'English'}>
-              {altLang.toUpperCase()}
+              {altLang}
             </a>
             <div class="theme-toggle" id="theme-toggle" title={t('theme.toggleTitle')}>
               <span class="theme-text">{t('theme.toggle')}</span>
@@ -150,8 +150,8 @@ const defaultUrl = new URL(getRelativeLocaleUrl(defaultLang, pathSegment), Astro
         
         function setTheme(theme: any) {
           if (theme === 'dark') {
-            root.style.setProperty('--background', '#000000');
-            root.style.setProperty('--foreground', '#ffffff');
+            root.style.setProperty('--background', '#1b1b1f');
+            root.style.setProperty('--foreground', '#e3e3e3');
             root.style.setProperty('--accent', '#8fa882');
             root.setAttribute('data-theme', 'dark');
           } else if (theme === 'light') {

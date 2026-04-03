@@ -13,8 +13,8 @@
 /* Dark mode when user prefers dark color scheme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
+    --background: #1b1b1f;
+    --foreground: #e3e3e3;
     --accent: #8fa882;
   }
 }
