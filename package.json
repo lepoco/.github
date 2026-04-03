@@ -9,7 +9,15 @@
     "type": "git",
     "url": "https://github.com/lepoco/.github"
   },
-  "keywords": ["astro", "blog", "wpf", "dotnet", "open-source", "microsoft", "terminal"],
+  "keywords": [
+    "astro",
+    "blog",
+    "wpf",
+    "dotnet",
+    "open-source",
+    "microsoft",
+    "terminal"
+  ],
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -20,7 +28,7 @@
     "astro": "^5.13.2"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.2.2",
-    "@astrojs/rss": "^4.0.11"
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.2.2"
   }
 }
