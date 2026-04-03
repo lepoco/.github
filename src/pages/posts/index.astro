@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostCard from '../../components/PostCard.astro';
 import { getCollection } from 'astro:content';
-import { useTranslations } from '../../i18n/utils';
+import PostCard from '../../components/PostCard.astro';
 import { defaultLang, type Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const lang = (Astro.currentLocale || defaultLang) as Lang;
 const t = useTranslations(lang);

@@ -1,26 +1,26 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lepo.co',
+  site: "https://lepo.co",
   // No base path needed for root domain deployment
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'pl'],
+    defaultLocale: "en",
+    locales: ["en", "pl"],
     fallback: {
-      pl: 'en',
+      pl: "en",
     },
     routing: {
       prefixDefaultLocale: false,
-      fallbackType: 'rewrite',
+      fallbackType: "rewrite",
     },
   },
   integrations: [sitemap()],
   markdown: {
     shikiConfig: {
-      theme: 'css-variables',
+      theme: "css-variables",
       langs: [],
       wrap: true,
     },
