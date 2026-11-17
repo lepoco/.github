@@ -18,24 +18,8 @@ const posts = (await getCollection('posts'))
   <div class="index-content framed">
     <h1 id="hello-there">{t('index.hello')}</h1>
     <p set:html={t('index.intro')} />
-    
-    <h2>{t('index.whatIDo')}</h2>
-    <p>{t('index.whatIDoText')}</p>
-
-    <h2>{t('index.offHours')}</h2>
-    <p>{t('index.offHoursText')}</p>
-    
-    <h2>{t('index.thingsBuilt')}</h2>
-    <ul>
-      <li><strong><a href="https://github.com/lepoco/wpfui">WPF UI</a></strong> - {t('index.wpfui')}</li>
-      <li><strong><a href="https://apps.microsoft.com/detail/9nh1p86h06cg">Radiograph</a></strong> - {t('index.radiograph')}</li>
-      <li><strong><a href="https://github.com/lepoco/mcp-camunda">Camunda MCP</a></strong> - {t('index.camunda')}</li>
-      <li><strong><a href="https://octavam.com">Octavam</a></strong> - {t('index.octavam')}</li>
-    </ul>
-
-    <h2>{t('index.wantToChat')}</h2>
-    <p>{t('index.wantToChatText')}</p>
-    
+    <p set:html={t('index.built')} />
+    <p>{t('index.ai')}</p>
     <p set:html={t('index.findMe').replace('{contactUrl}', getRelativeLocaleUrl(lang, 'contact'))} />
   </div>
   

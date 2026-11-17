@@ -12,6 +12,14 @@ const t = useTranslations(lang);
   <div class="page">
     <h1>{t('about.heading')}</h1>
     <p>{t('about.intro')}</p>
+
+    <figure class="about-photo">
+      <picture>
+        <source srcset="/me-and-dog.avif" type="image/avif" />
+        <img src="/me-and-dog.jpg" alt={t('about.photoAlt')} width="1200" height="600" loading="lazy" />
+      </picture>
+      <figcaption>{t('about.photoCaption')}</figcaption>
+    </figure>
     
     <h2>{t('about.whatIDo')}</h2>
     <p>{t('about.whatIDoText1')}</p>
@@ -44,6 +52,21 @@ const t = useTranslations(lang);
   </div>
 </BaseLayout>
 <style>
+  .about-photo {
+    margin: 1.5rem 0;
+  }
+
+  .about-photo img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+  }
+
+  .about-photo figcaption {
+    opacity: 0.7;
+    margin-top: 0.5rem;
+  }
+
   .page {
     max-width: 1200px;
     margin: 0 auto;
