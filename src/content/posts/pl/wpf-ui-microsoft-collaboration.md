@@ -20,7 +20,7 @@ Pomysł był prosty. Chciałem kontrolek, które poprawnie realizują język pro
 
 WPF UI urósł bardziej, niż się spodziewałem na początku. Ma 8,8 tys. gwiazdek na GitHubie i 894 forki, a używa go ponad 2500 projektów. Pomogło go ulepszać 89 współtwórców.
 
-Najbardziej widoczne zastosowanie to chyba Microsoft PowerToys, gdzie WPF UI napędza interfejs PowerToys Run.
+Najbardziej widoczne zastosowanie to Microsoft PowerToys, gdzie WPF UI było fundamentem, gdy przyjmował nowy design Fluent. Stało się też wzorcem dla Fluent UI w WPF, a moja aplikacja WPF UI Gallery zainspirowała Microsoftowe WPF Gallery.
 
 ## Co to oznacza
 
@@ -30,7 +30,7 @@ Dla szerszej społeczności to dowód, że open source może wpływać na duże 
 
 ## Integracja z PowerToys
 
-Zobaczenie WPF UI w Microsoft PowerToys Run to jedna z najbardziej satysfakcjonujących rzeczy. PowerToys to jedno z najpopularniejszych narzędzi dla programistów na GitHubie. Świadomość, że moja praca pomaga milionom programistów każdego dnia, daje ogromną satysfakcję.
+Zobaczenie WPF UI w Microsoft PowerToys Run było jedną z najbardziej satysfakcjonujących rzeczy. PowerToys to jedno z najpopularniejszych narzędzi dla programistów na GitHubie. Świadomość, że moja praca pomagała milionom programistów każdego dnia, wciąż daje ogromną satysfakcję.
 
 ## Co dalej
 

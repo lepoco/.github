@@ -1,6 +1,6 @@
 ---
-title: 'How WPF UI Powers Microsoft PowerToys Run'
-description: 'The story behind WPF UI becoming the foundation for Microsoft PowerToys Run, one of GitHubs most popular developer tools.'
+title: 'How WPF UI Became the Foundation for Fluent Design in PowerToys'
+description: 'The story of how WPF UI became the foundation for Fluent design in Microsoft PowerToys and a blueprint for Fluent UI in WPF.'
 pubDate: 2024-06-15
 author: 'Leszek Pomianowski'
 image: 'https://lepo.co/pt-hero.dark.png'
@@ -8,7 +8,9 @@ avifImage: 'https://lepo.co/pt-hero.dark.avif'
 tags: ['powertoys', 'microsoft', 'wpf', 'developer-tools', 'open-source']
 ---
 
-Seeing WPF UI become the foundation for Microsoft PowerToys Run has been one of the most satisfying moments in my work. PowerToys is one of the most popular developer tools on GitHub. Knowing my library helps millions of developers daily is still somewhat surreal.
+WPF UI was the foundation when Microsoft PowerToys adopted the new Fluent design, and that is still one of the most satisfying moments in my work. PowerToys is one of the most popular developer tools on GitHub. Knowing my library helped millions of developers daily still feels surreal.
+
+PowerToys no longer uses WPF UI, but the work stayed useful. It became the groundwork and a blueprint for Fluent UI in WPF. My WPF UI Gallery app also inspired Microsoft's WPF Gallery, a showcase of WPF controls.
 
 ## What PowerToys Run Does
 

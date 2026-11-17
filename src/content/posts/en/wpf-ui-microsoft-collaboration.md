@@ -20,7 +20,7 @@ The idea was straightforward. I wanted controls that implemented the Windows 11 
 
 WPF UI has grown beyond what I expected when I started it. It now has 8.8k stars on GitHub and 894 forks, and it's used in over 2,500 projects. 89 contributors have helped improve it.
 
-The most visible use is probably Microsoft PowerToys, where WPF UI powers the PowerToys Run interface.
+The most visible use was Microsoft PowerToys, where WPF UI was the foundation when it adopted the new Fluent design. It also became a blueprint for Fluent UI in WPF, and my WPF UI Gallery app inspired Microsoft's WPF Gallery.
 
 ## What This Means
 
@@ -30,7 +30,7 @@ For the wider community, it shows that open-source work can influence major fram
 
 ## PowerToys Integration
 
-Seeing WPF UI in Microsoft PowerToys Run has been one of the most rewarding parts. PowerToys is one of the most popular developer tools on GitHub, and knowing my work helps millions of developers daily is incredibly fulfilling.
+Seeing WPF UI in Microsoft PowerToys Run was one of the most rewarding parts. PowerToys is one of the most popular developer tools on GitHub, and knowing my work helped millions of developers daily is still incredibly fulfilling.
 
 ## What's Next
 
