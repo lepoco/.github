@@ -1,12 +1,12 @@
 ---
 title: 'Witaj w mojej przestrzeni!'
-description: 'Wprowadzenie do mojego świata, wkładu w open-source i tworzenia narzędzi, których deweloperzy naprawdę używają.'
+description: 'Wprowadzenie do mojego świata: architektury, automatyki, open source i tworzenia narzędzi, których programiści naprawdę używają.'
 pubDate: 2024-01-01
 author: 'Leszek Pomianowski'
 tags: ['introduction', 'wpf', 'dotnet', 'open-source']
 ---
 
-Cześć! Jestem Leszek Pomianowski, a na GitHubie pewnie kojarzysz mnie jako lepoco. Piszę tu o programowaniu, o swoim wkładzie w open source i o narzędziach, które tworzę.
+Cześć! Jestem Leszek Pomianowski, a na GitHubie pewnie kojarzysz mnie jako lepoco. Piszę tu o architekturze, automatyce, swoim wkładzie w open source i o narzędziach, które tworzę.
 
 ## Moja misja
 

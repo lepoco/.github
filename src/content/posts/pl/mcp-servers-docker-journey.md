@@ -12,7 +12,7 @@ Niedawno zbudowałem dwa serwery MCP (Model Context Protocol) i Docker dodał ob
 
 Model Context Protocol pozwala asystentom AI bezpiecznie łączyć się z zewnętrznymi systemami. AI nie opiera się wtedy tylko na danych treningowych. Może na bieżąco pracować z działającymi systemami biznesowymi, bazami danych i API.
 
-To trochę tak, jakby Claude albo ChatGPT mógł zajrzeć do Twoich workflow w Camundzie, uruchomić proces albo przeczytać dokumentację API. Nie musisz wklejać wszystkiego do czatu.
+To trochę tak, jakby Claude albo ChatGPT mógł zajrzeć do twoich workflow w Camundzie, uruchomić proces albo przeczytać dokumentację API. Nie musisz wklejać wszystkiego do czatu.
 
 ## Dwa serwery
 

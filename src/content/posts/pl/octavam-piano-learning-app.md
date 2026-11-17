@@ -14,7 +14,7 @@ Gram na pianinie cyfrowym Kawai i chciałem mieć aplikację, która pokazuje mi
 
 Wiele aplikacji do nauki gry było napisanych w HTML. Czuło się to od razu: były wolne, ciężkie i ciągle rozłączały się z Bluetooth mojego pianina. Nic tak nie psuje ćwiczenia, jak łączenie od nowa w środku utworu.
 
-Jestem programistą, więc zrobiłem to, co oczywiste. Napisałem własną.
+Na co dzień piszę oprogramowanie, więc zrobiłem to, co oczywiste. Napisałem własną.
 
 ## Co potrafi Octavam
 

@@ -1,12 +1,12 @@
 ---
 title: 'Welcome to My Development Journey'
-description: 'An introduction to my world of .NET development, open-source contributions, and building tools that developers love to use.'
+description: 'An introduction to my world of architecture, automation, open-source contributions, and building tools that developers love to use.'
 pubDate: 2024-01-01
 author: 'Leszek Pomianowski'
 tags: ['introduction', 'wpf', 'dotnet', 'open-source']
 ---
 
-Welcome to my corner of the internet. I'm Leszek Pomianowski, though you might know me as lepoco on GitHub. Here I write about .NET development, open-source contributions, and building tools that make developers' lives easier.
+Welcome to my corner of the internet. I'm Leszek Pomianowski, though you might know me as lepoco on GitHub. Here I write about architecture, automation, open-source contributions, and building tools that make developers' lives easier.
 
 ## My Mission
 

@@ -14,7 +14,7 @@ I play a Kawai digital piano, and I wanted an app that shows me what to play. No
 
 Many of the piano apps I tried were built in HTML. You could feel it: they were slow, heavy, and they kept dropping the Bluetooth connection to my piano. Nothing kills practice faster than reconnecting in the middle of a song.
 
-I'm a developer, so I did the obvious thing. I wrote my own.
+I write software for a living, so I did the obvious thing. I wrote my own.
 
 ## What Octavam does
 
