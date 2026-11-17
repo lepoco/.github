@@ -6,65 +6,65 @@ author: 'Leszek Pomianowski'
 tags: ['introduction', 'wpf', 'dotnet', 'open-source']
 ---
 
-Witaj w moim zakątku internetu! Jestem **Leszek Pomianowski**, choć na GitHubie możesz znać mnie lepiej jako **lepoco**. To miejsce, w którym dzielę się moją pasją do rozwoju oprogramowania, wkładem w open source oraz tworzeniem narzędzi.
+Cześć! Jestem Leszek Pomianowski, a na GitHubie pewnie kojarzysz mnie jako lepoco. Piszę tu o programowaniu, o swoim wkładzie w open source i o narzędziach, które tworzę.
 
 ## Moja misja
 
 > "Kod to nie tylko rozwiązywanie problemów - to także tworzenie pięknych, intuicyjnych doświadczeń, z których deweloperzy naprawdę chcą korzystać."
 
-Wierzę, że narzędzia dla deweloperów powinny być jednocześnie użyteczne i estetyczne. Właśnie dlatego poświęciłem swoją karierę łączeniu funkcjonalności z dobrym designem, szczególnie w ekosystemie tworzenia aplikacji dla Windowsa.
+Uważam, że narzędzia dla deweloperów powinny być użyteczne i estetyczne. Dlatego w swojej karierze łączę funkcjonalność z dobrym designem, głównie przy aplikacjach dla Windowsa.
 
 ## Co tutaj znajdziesz
 
-Mój blog to sposób na dzielenie się moimi sukcesami, wyzwaniami i wszystkim, czego uczę się po drodze. Wrzucam wpisy o takich tematach jak:
+Na blogu opisuję swoje sukcesy, wyzwania i to, czego uczę się po drodze. Znajdziesz tu wpisy o:
 
-- **Tworzenie interfejsów w WPF** - nowoczesne wzorce projektowe dla aplikacji Windows
-- **Przygody z open source** - historie z budowania bibliotek używanych przez tysiące osób
-- **Współpraca z Microsoftem** - praca z dużymi firmami technologicznymi nad narzędziami dla deweloperów
-- **Serwery MCP** - tworzenie narzędzi deweloperskich wspieranych przez AI
-- **Budowanie społeczności** - jak open source tworzy niesamowite możliwości
+- Tworzeniu interfejsów w WPF: nowoczesne wzorce projektowe dla aplikacji Windows
+- Open source: historie z budowania bibliotek używanych przez tysiące osób
+- Współpracy z Microsoftem: praca z dużymi firmami technologicznymi nad narzędziami dla deweloperów
+- Serwerach MCP: narzędzia deweloperskie wspierane przez AI
+- Budowaniu społeczności: jakie możliwości daje open source
 
 ## Filozofia stojąca za moją pracą
 
-Każdy projekt, nad którym pracuję, opiera się na kilku kluczowych zasadach:
+Każdy projekt opieram na kilku zasadach.
 
 ### Piękno spotyka funkcjonalność
 
-Technologia powinna być piękna. Niezależnie od tego, czy to biblioteka UI, czy narzędzie wiersza poleceń, dobry design sprawia, że wszystko działa lepiej.
+Technologia powinna ładnie wyglądać. Czy to biblioteka UI, czy narzędzie wiersza poleceń, dobry design sprawia, że całość działa lepiej.
 
 ### Społeczność przede wszystkim
 
-Najlepsze oprogramowanie tworzą społeczności, nie pojedyncze osoby. Każdy wkład, niezależnie od tego, jak mały, ma znaczenie.
+Najlepsze oprogramowanie powstaje w społecznościach, nie w pojedynkę. Liczy się każdy wkład, nawet najmniejszy.
 
 ### Nowoczesne standardy
 
-Po co godzić się na przestarzałe doświadczenia, skoro możemy tworzyć coś, co wydaje się naturalne dla współczesnych platform?
+Nie widzę powodu, żeby godzić się na przestarzałe rozwiązania. Możemy tworzyć aplikacje, które pasują do współczesnych platform.
 
 ## Dołącz do społeczności
 
-Tworzenie oprogramowania jest lepsze, gdy robimy to razem. Oto jak możesz stać się częścią tej drogi:
+Oprogramowanie lepiej tworzy się razem. Możesz się przyłączyć na kilka sposobów:
 
-- **Obserwuj na GitHubie** - zobacz, co tworzę na bieżąco
-- **Dołącz do dyskusji** - dziel się pomysłami i opiniami o projektach
-- **Współtwórz** - każdy pull request wzmacnia ekosystem
-- **Wesprzyj** - pomóż rozwijać zrównoważony open source
+- Obserwuj mnie na GitHubie, żeby widzieć, nad czym pracuję
+- Dołącz do dyskusji i podziel się pomysłami oraz opiniami o projektach
+- Współtwórz projekty, bo każdy pull request wzmacnia ekosystem
+- Wesprzyj mnie i pomóż utrzymać open source
 
 ## Bądźmy w kontakcie
 
-Ten blog to tylko jeden ze sposobów, w jaki możemy się połączyć. Znajdziesz mnie również tutaj:
+Blog to tylko jeden ze sposobów kontaktu. Znajdziesz mnie też tutaj:
 
-- **GitHub**: [@lepoco](https://github.com/lepoco) - tutaj żyje kod
-- **Wsparcie**: [GitHub Sponsors](https://github.com/sponsors/pomianowski) - wspieranie tej misji
-- **Projekty**: [lepo.co](https://lepo.co) - profesjonalne wsparcie i usługi
+- GitHub: [@lepoco](https://github.com/lepoco), tu jest cały kod
+- Wsparcie: [GitHub Sponsors](https://github.com/sponsors/pomianowski)
+- Projekty: [lepo.co](https://lepo.co), profesjonalne wsparcie i usługi
 
 ## Co dalej?
 
-Przyszłość jest niezwykle ekscytująca. Jesteśmy w wyjątkowym momencie, w którym AI, nowoczesny design i współpraca społeczności łączą się, by tworzyć lepsze doświadczenia dla deweloperów niż kiedykolwiek wcześniej.
+Dziś AI, nowoczesny design i praca społeczności razem pozwalają tworzyć dla deweloperów lepsze narzędzia niż kiedykolwiek wcześniej.
 
-Jestem zdecydowany być częścią tej przyszłości - budować narzędzia, które deweloperzy pokochają, rozwijać otwarte i inkluzywne społeczności oraz udowadniać, że open source może konkurować z największymi firmami technologicznymi świata - a często nawet je przewyższać.
+Chcę w tym uczestniczyć. Będę budować narzędzia, które deweloperzy polubią, rozwijać otwarte społeczności i pokazywać, że open source może konkurować z największymi firmami technologicznymi, a często je przewyższa.
 
 ---
 
-*Dzięki, że tu jesteś. Niezależnie od tego, czy jesteś doświadczonym deweloperem, czy dopiero zaczynasz swoją drogę, mam nadzieję, że znajdziesz w tych wpisach coś wartościowego. Zbudujmy razem coś niesamowitego.*
+*Dzięki, że tu jesteś. Czy programujesz od lat, czy dopiero zaczynasz, mam nadzieję, że znajdziesz tu coś dla siebie. Zbudujmy razem coś dobrego.*
 
-*— Leszek*
+*Leszek*

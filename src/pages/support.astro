@@ -11,6 +11,7 @@ const t = useTranslations(lang);
   <div class="page">
     <h1>{t('support.heading')}</h1>
     <p>{t('support.intro')}</p>
+    <p set:html={t('support.cta')} />
     
     <h2>{t('support.whatICanHelp')}</h2>
     
@@ -19,6 +20,9 @@ const t = useTranslations(lang);
     
     <h3>{t('support.guidance')}</h3>
     <p>{t('support.guidanceText')}</p>
+
+    <h2>{t('support.whyMe')}</h2>
+    <p>{t('support.whyMeText')}</p>
     
     <h2>{t('support.howItWorks')}</h2>
     <p>{t('support.howItWorksText1')}</p>
@@ -35,7 +39,7 @@ const t = useTranslations(lang);
     <p>{t('support.techText1')}</p>
     <p>{t('support.techText2')}</p>
   </div>
-</BaseLayout></li>
+</BaseLayout>
 <style>
   .page {
     max-width: 1200px;

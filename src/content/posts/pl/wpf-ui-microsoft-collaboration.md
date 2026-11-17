@@ -1,6 +1,6 @@
 ---
-title: 'WPF UI and Microsoft: z'
-description: 'How a personal project to modernize WPF applications caught Microsoft attention and led to official collaboration on .NET 9.'
+title: 'WPF UI i Microsoft: nieoczekiwana współpraca'
+description: 'Jak osobisty projekt do unowocześniania aplikacji WPF zwrócił uwagę Microsoftu i doprowadził do oficjalnej współpracy przy .NET 9.'
 pubDate: 2024-01-15
 author: 'Leszek Pomianowski'
 image: 'https://lepo.co/wpf-collaboration-full.png'
@@ -8,40 +8,40 @@ avifImage: 'https://lepo.co/wpf-collaboration-full.avif'
 tags: ['wpf', 'microsoft', 'dotnet', 'collaboration', 'open-source']
 ---
 
-In December 2023, I got an email that I had to read twice. Microsoft's WPF team wanted to collaborate on bringing WPF UI functionality into the core .NET framework. What started as a personal project to make WPF applications look less like they were built in 2005 had somehow caught the attention of the people who actually build WPF.
+W grudniu 2023 roku dostałem maila, który musiałem przeczytać dwa razy. Zespół WPF z Microsoftu chciał współpracować przy przeniesieniu funkcji WPF UI do głównego frameworka .NET. Zacząłem go jako osobisty projekt, żeby aplikacje WPF wyglądały mniej jak z 2005 roku. Jakimś cudem zwrócił uwagę ludzi, którzy na co dzień budują WPF.
 
-## How This Started
+## Jak to się zaczęło
 
-I started working on WPF UI because I was frustrated with how difficult it was to make WPF applications that looked like they belonged on modern Windows. Everything looked dated, and getting basic things like proper theming or modern controls required jumping through hoops or using workarounds that felt fragile.
+WPF UI zacząłem robić, bo frustrowało mnie, jak trudno zrobić aplikację WPF, która wygląda swojsko na nowoczesnym Windowsie. Wszystko wyglądało staro. Nawet podstawy, jak porządne motywy czy nowoczesne kontrolki, wymagały kombinowania albo kruchych obejść.
 
-The idea was straightforward: create a set of controls that actually implemented the Windows 11 design language properly, handled theming automatically, and didn't require developers to become designers to make their applications look decent.
+Pomysł był prosty. Chciałem kontrolek, które poprawnie realizują język projektowania Windows 11 i same obsługują motywy. Programista nie powinien musieć zostawać projektantem, żeby jego aplikacja wyglądała przyzwoicie.
 
-## The Numbers
+## Liczby
 
-WPF UI has grown beyond what I expected when I started it. As of now, it has 8.8k stars on GitHub, 894 forks, and is being used in over 2,500 projects. There are 89 contributors who have helped improve it.
+WPF UI urósł bardziej, niż się spodziewałem na początku. Ma 8,8 tys. gwiazdek na GitHubie i 894 forki, a używa go ponad 2500 projektów. Pomogło go ulepszać 89 współtwórców.
 
-The most visible use is probably Microsoft PowerToys, where WPF UI powers the PowerToys Run interface. Knowing that millions of developers use my library daily through PowerToys is still somewhat surreal.
+Najbardziej widoczne zastosowanie to chyba Microsoft PowerToys, gdzie WPF UI napędza interfejs PowerToys Run.
 
-## What This Means
+## Co to oznacza
 
-For developers, this collaboration means native modern controls in WPF without additional dependencies, seamless integration with existing projects, official Microsoft support for modern Windows design patterns, and continued innovation in desktop development.
+Dla programistów ta współpraca oznacza natywne, nowoczesne kontrolki w WPF bez dodatkowych zależności. Oznacza też płynną integrację z istniejącymi projektami, oficjalne wsparcie Microsoftu dla nowoczesnych wzorców projektowych Windows i dalszy rozwój pracy na desktopie.
 
-For the broader community, it demonstrates that open-source work can influence major frameworks, that community-driven development matters, and that there's still a future for WPF technology.
+Dla szerszej społeczności to dowód, że open source może wpływać na duże frameworki i że rozwój napędzany przez społeczność ma znaczenie. Pokazuje też, że WPF nadal ma przyszłość.
 
-## PowerToys Integration
+## Integracja z PowerToys
 
-One of the most rewarding aspects has been seeing WPF UI used in Microsoft PowerToys Run. PowerToys is one of the most popular developer tools on GitHub, and knowing that my work helps millions of developers daily is incredibly fulfilling.
+Zobaczenie WPF UI w Microsoft PowerToys Run to jedna z najbardziej satysfakcjonujących rzeczy. PowerToys to jedno z najpopularniejszych narzędzi dla programistów na GitHubie. Świadomość, że moja praca pomaga milionom programistów każdego dnia, daje ogromną satysfakcję.
 
-## What's Next
+## Co dalej
 
-While some functionality will become part of core WPF, WPF UI will continue to evolve. It will maintain support for older .NET versions, provide advanced custom controls, offer experimental features and innovations, and continue being driven by community needs.
+Część funkcji trafi do głównego WPF, ale WPF UI będzie się dalej rozwijał. Zachowa wsparcie dla starszych wersji .NET, dostarczy zaawansowane kontrolki niestandardowe i da dostęp do funkcji eksperymentalnych. Nadal będą go napędzać potrzeby społeczności.
 
-The collaboration with Microsoft doesn't change the open-source nature of WPF UI. If anything, it validates the approach and provides more resources to make desktop application development better for everyone.
+Współpraca z Microsoftem nie zmienia open source'owego charakteru WPF UI. Jeśli już, to potwierdza obrane podejście i daje więcej zasobów na rozwój aplikacji desktopowych.
 
-## Personal Reflection
+## Osobista refleksja
 
-This achievement wouldn't have been possible without the WPF UI community and contributors, Microsoft's WPF team recognizing the value of community-driven innovation, developers who trusted WPF UI in their projects, and everyone who provided feedback and bug reports.
+Bez społeczności i współtwórców WPF UI nie dałbym rady tego zrobić. Zespół WPF z Microsoftu dostrzegł wartość innowacji napędzanych przez społeczność. Programiści zaufali WPF UI w swoich projektach, a wiele osób przysłało uwagi i zgłoszenia błędów.
 
-What started as a personal frustration with the state of WPF applications has become something that influences the direction of the framework itself. It's a reminder that individual contributions to open source can have impacts far beyond what you initially imagine.
+To, co zaczęło się od osobistej frustracji stanem aplikacji WPF, wpływa dziś na kierunek rozwoju samego frameworka. Przypomina mi, że pojedynczy wkład w open source może zajść znacznie dalej, niż początkowo sądzisz.
 
-If you're working on desktop applications and want them to look like they belong on modern Windows, you can find WPF UI on GitHub and explore the documentation at wpfui.lepo.co. The project remains open to contributions and feedback from the community.
+Jeśli piszesz aplikacje desktopowe i chcesz, żeby wyglądały swojsko na nowoczesnym Windowsie, znajdziesz WPF UI na GitHubie, a dokumentację przeczytasz na wpfui.lepo.co. Projekt pozostaje otwarty na wkład i uwagi.

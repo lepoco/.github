@@ -1,27 +1,27 @@
 ---
-title: 'Jak stworzyłem Radiograph, narzędzie do monitorowania komputerów'
-description: 'Jak stworzyłem Radiograph, narzędzie do monitorowania sprzętu, które zostało zainstalowane na ponad 65 000 komputerach.'
+title: 'Jak powstał Radiograph, aplikacja do monitorowania sprzętu'
+description: 'Jak zbudowałem Radiograph, narzędzie do monitorowania sprzętu, które jakimś cudem trafiło na ponad 65 000 komputerów.'
 pubDate: 2024-09-10
 author: 'Leszek Pomianowski'
 tags: ['radiograph', 'wpf', 'hardware-monitoring', 'microsoft-store', 'librehardwaremonitor']
 ---
 
-I started working on Radiograph because I was frustrated with hardware monitoring tools. They all looked like they were built in 2005 and worked about as well. I wanted something that actually looked decent and gave me the information I needed without making me feel like I needed a computer science degree to understand it.
+Radiograph zacząłem robić, bo wkurzały mnie programy do monitorowania sprzętu. Wszystkie wyglądały, jakby powstały w 2005 roku, i działały mniej więcej tak samo. Chciałem czegoś, co wygląda przyzwoicie i pokazuje potrzebne informacje bez dyplomu z informatyki.
 
-## Why I Built This
+## Dlaczego go zbudowałem
 
-Most hardware monitoring applications fall into two categories: either they're incredibly powerful but look terrible, or they look okay but don't tell you anything useful. I use these tools regularly to keep an eye on temperatures when I'm pushing my system, and I got tired of interfaces that made me squint to read tiny text or navigate through confusing menus.
+Większość takich aplikacji należy do jednej z dwóch grup. Albo są potężne, ale brzydkie, albo wyglądają znośnie, ale nic pożytecznego nie mówią. Regularnie sprawdzam temperatury, kiedy mocno obciążam komputer. Dość miałem mrużenia oczu nad malutkim tekstem i szukania czegokolwiek w niejasnych menu.
 
-I had been working on WPF UI for a while, and it seemed like a good opportunity to build something that actually looked like it belonged on a modern Windows system. The plan was simple: make it work well, make it look good, and don't overcomplicate things.
+Od jakiegoś czasu pracowałem nad WPF UI, więc to była dobra okazja, żeby zrobić coś, co pasuje do nowoczesnego Windowsa. Plan był prosty: ma dobrze działać, ładnie wyglądać i nie być przekombinowane.
 
-## Building on Solid Foundations
+## Solidne fundamenty
 
-For the core monitoring functionality, I used LibreHardwareMonitor. This library does the heavy lifting of actually talking to your hardware and getting sensor data. I've contributed some improvements to it over time, particularly around SMBIOS handling for motherboard information.
+Do samego monitorowania użyłem LibreHardwareMonitor. To on odwala brudną robotę: rozmawia ze sprzętem i odczytuje dane z czujników. Z czasem dołożyłem do niego kilka poprawek, głównie przy obsłudze SMBIOS i informacjach o płycie głównej.
 
-The UI is built with WPF UI, which gives it that native Windows 11 look without me having to reinvent every control. It handles the theming automatically, so if you switch between light and dark mode, the app just follows along.
+Interfejs powstał na WPF UI, dzięki czemu ma natywny wygląd Windowsa 11 i nie muszę wymyślać każdej kontrolki od nowa. Motywy ogarnia automatycznie, więc gdy przełączasz się między jasnym a ciemnym trybem, aplikacja idzie za tobą.
 
-## The Development Context
+## Kontekst projektu
 
-This project sits at the intersection of several things I work on. The LibreHardwareMonitor contributions came from real needs while building Radiograph. The WPF UI library got better because I was using it to build actual applications. And having a successful Microsoft Store app has opened doors for other projects and collaborations.
+Ten projekt leży tam, gdzie spotyka się kilka rzeczy, nad którymi pracuję. Wkład w LibreHardwareMonitor wziął się z realnych potrzeb przy budowaniu Radiographa. WPF UI zyskał, bo używałem go w prawdziwych aplikacjach. A udana aplikacja w Microsoft Store otworzyła drzwi do innych projektów i współprac.
 
-It's a good example of how open source development and practical application development can reinforce each other. Building something people actually use reveals problems and opportunities that you don't see when just working on libraries in isolation.
+Open source i praktyczne tworzenie aplikacji napędzają się nawzajem. Kiedy ludzie naprawdę korzystają z tego, co zrobisz, zauważasz problemy i możliwości, których nie zobaczysz, pracując nad bibliotekami w oderwaniu od życia.

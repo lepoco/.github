@@ -12,13 +12,14 @@ export interface Props {
   updatedDate?: Date;
   author?: string;
   image?: string;
+  avifImage?: string;
   tags?: string[];
   lang?: Lang;
 }
 
 const lang = (Astro.currentLocale || defaultLang) as Lang;
 const t = useTranslations(lang);
-const { title, description, pubDate, updatedDate, author, image, tags = [] } = Astro.props;
+const { title, description, pubDate, updatedDate, author, image, avifImage, tags = [] } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} image={image}>
@@ -48,7 +49,14 @@ const { title, description, pubDate, updatedDate, author, image, tags = [] } = A
     
     {image && (
       <figure class="post-cover">
-        <img src={image} alt={title} />
+        {avifImage ? (
+          <picture>
+            <source srcset={avifImage} type="image/avif" />
+            <img src={image} alt={title} />
+          </picture>
+        ) : (
+          <img src={image} alt={title} />
+        )}
       </figure>
     )}
     

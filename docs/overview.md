@@ -170,6 +170,20 @@ z.object({
 })
 ```
 
+### Post Images
+
+- `image` — fallback (PNG/JPG), also used for `og:image`. `avifImage` — AVIF variant.
+- `PostLayout.astro` renders `<picture>` with an AVIF `<source>` when `avifImage` is set, otherwise a plain `<img>`.
+- Image files live in `public/` and are referenced by absolute URL (`https://lepo.co/<file>`).
+- Cover images: ~1200 px wide, AVIF (quality ~50) plus a progressive JPG fallback. Brighten dark photos before encoding.
+
+## Copy and Tone
+
+- All UI copy lives in `src/i18n/ui.ts` (EN + PL); pages hold no hardcoded text except `privacy.astro` (EN only, legal wording).
+- Home, About, Contact: casual, first person, personal (automation, PCB design, Home Assistant). Support: business tone with a call to action and a "why me" section.
+- Style: active voice, short sentences, no em dashes, no emojis, full Polish diacritics, no calques from English. Do not invent facts.
+- Do not mention that Octavam is open source (it is not, for now). It is being added to the App Store and Mac App Store.
+
 ## Build Output
 
 61 pages (EN + PL + fallbacks). Build completes in ~1s.

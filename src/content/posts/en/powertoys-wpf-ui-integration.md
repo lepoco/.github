@@ -8,10 +8,10 @@ avifImage: 'https://lepo.co/pt-hero.dark.avif'
 tags: ['powertoys', 'microsoft', 'wpf', 'developer-tools', 'open-source']
 ---
 
-One of the most satisfying moments in my development work has been seeing WPF UI become the foundation for Microsoft PowerToys Run. PowerToys is one of the most popular developer tools on GitHub, and knowing that my library helps millions of developers daily is still somewhat surreal.
+Seeing WPF UI become the foundation for Microsoft PowerToys Run has been one of the most satisfying moments in my work. PowerToys is one of the most popular developer tools on GitHub. Knowing my library helps millions of developers daily is still somewhat surreal.
 
 ## What PowerToys Run Does
 
-PowerToys Run is a quick launcher for Windows that helps you find and launch applications, search files, perform calculations, and run web searches. It's part of Microsoft PowerToys, which is a collection of utilities for Windows power users.
+PowerToys Run is a quick launcher for Windows. You use it to find and launch applications, search files, do calculations, and run web searches. It's part of Microsoft PowerToys, a collection of utilities for Windows power users.
 
-The tool is designed around fast app launching by typing to find any installed application, file search across your system, built-in calculator functionality, direct web search capabilities, an extensible plugin ecosystem, and keyboard-first navigation for efficiency.
+You type to find any installed application, search files across your system, use the built-in calculator, or search the web directly. It has an extensible plugin ecosystem, and you can drive all of it from the keyboard.

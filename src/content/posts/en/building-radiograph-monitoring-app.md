@@ -6,22 +6,22 @@ author: 'Leszek Pomianowski'
 tags: ['radiograph', 'wpf', 'hardware-monitoring', 'microsoft-store', 'librehardwaremonitor']
 ---
 
-I started working on Radiograph because I was frustrated with hardware monitoring tools. They all looked like they were built in 2005 and worked about as well. I wanted something that actually looked decent and gave me the information I needed without making me feel like I needed a computer science degree to understand it.
+I started Radiograph because I was frustrated with hardware monitoring tools. They all looked like they were built in 2005 and worked about as well. I wanted something that looked decent and gave me the information I needed without a computer science degree.
 
 ## Why I Built This
 
-Most hardware monitoring applications fall into two categories: either they're incredibly powerful but look terrible, or they look okay but don't tell you anything useful. I use these tools regularly to keep an eye on temperatures when I'm pushing my system, and I got tired of interfaces that made me squint to read tiny text or navigate through confusing menus.
+Most hardware monitoring apps fall into two camps. Either they're powerful but ugly, or they look okay but tell you nothing useful. I check temperatures regularly when I'm pushing my system. I got tired of squinting at tiny text and digging through confusing menus.
 
-I had been working on WPF UI for a while, and it seemed like a good opportunity to build something that actually looked like it belonged on a modern Windows system. The plan was simple: make it work well, make it look good, and don't overcomplicate things.
+I had been working on WPF UI for a while, so it was a good chance to build something that looked at home on a modern Windows system. The plan was simple: make it work well, make it look good, and don't overcomplicate things.
 
 ## Building on Solid Foundations
 
-For the core monitoring functionality, I used LibreHardwareMonitor. This library does the heavy lifting of actually talking to your hardware and getting sensor data. I've contributed some improvements to it over time, particularly around SMBIOS handling for motherboard information.
+For the monitoring itself, I used LibreHardwareMonitor. It does the heavy lifting of talking to your hardware and reading sensor data. I've contributed some improvements to it over time, mostly around SMBIOS handling for motherboard information.
 
-The UI is built with WPF UI, which gives it that native Windows 11 look without me having to reinvent every control. It handles the theming automatically, so if you switch between light and dark mode, the app just follows along.
+The UI is built with WPF UI, which gives it the native Windows 11 look without me reinventing every control. It handles theming automatically, so the app follows you when you switch between light and dark mode.
 
 ## The Development Context
 
-This project sits at the intersection of several things I work on. The LibreHardwareMonitor contributions came from real needs while building Radiograph. The WPF UI library got better because I was using it to build actual applications. And having a successful Microsoft Store app has opened doors for other projects and collaborations.
+This project sits where several things I work on meet. The LibreHardwareMonitor contributions came from real needs while building Radiograph. WPF UI got better because I used it for actual applications. And having a successful Microsoft Store app has opened doors for other projects and collaborations.
 
-It's a good example of how open source development and practical application development can reinforce each other. Building something people actually use reveals problems and opportunities that you don't see when just working on libraries in isolation.
+Open source and practical app development feed each other. When people actually use what you build, you find problems and opportunities you'd never see while working on libraries in isolation.

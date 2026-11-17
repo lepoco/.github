@@ -1,6 +1,6 @@
 ---
-title: 'How WPF UI Powers Microsoft PowerToys Run'
-description: 'The story behind WPF UI becoming the foundation for Microsoft PowerToys Run, one of GitHubs most popular developer tools.'
+title: 'Jak WPF UI napędza Microsoft PowerToys Run'
+description: 'Historia tego, jak WPF UI stało się fundamentem Microsoft PowerToys Run, jednego z najpopularniejszych narzędzi dla programistów na GitHubie.'
 pubDate: 2024-06-15
 author: 'Leszek Pomianowski'
 image: 'https://lepo.co/pt-hero.dark.png'
@@ -8,10 +8,10 @@ avifImage: 'https://lepo.co/pt-hero.dark.avif'
 tags: ['powertoys', 'microsoft', 'wpf', 'developer-tools', 'open-source']
 ---
 
-One of the most satisfying moments in my development work has been seeing WPF UI become the foundation for Microsoft PowerToys Run. PowerToys is one of the most popular developer tools on GitHub, and knowing that my library helps millions of developers daily is still somewhat surreal.
+Jednym z najprzyjemniejszych momentów w mojej pracy było to, że WPF UI stało się fundamentem Microsoft PowerToys Run. PowerToys to jedno z najpopularniejszych narzędzi dla programistów na GitHubie. Świadomość, że moja biblioteka pomaga codziennie milionom deweloperów, wciąż wydaje mi się trochę nierealna.
 
-## What PowerToys Run Does
+## Co robi PowerToys Run
 
-PowerToys Run is a quick launcher for Windows that helps you find and launch applications, search files, perform calculations, and run web searches. It's part of Microsoft PowerToys, which is a collection of utilities for Windows power users.
+PowerToys Run to szybki launcher dla Windowsa. Używasz go, żeby znajdować i uruchamiać aplikacje, szukać plików, liczyć i wyszukiwać w sieci. Wchodzi w skład Microsoft PowerToys, zestawu narzędzi dla zaawansowanych użytkowników Windowsa.
 
-The tool is designed around fast app launching by typing to find any installed application, file search across your system, built-in calculator functionality, direct web search capabilities, an extensible plugin ecosystem, and keyboard-first navigation for efficiency.
+Wpisujesz nazwę, żeby znaleźć dowolną zainstalowaną aplikację. Możesz też przeszukiwać pliki w całym systemie, korzystać z wbudowanego kalkulatora albo szukać bezpośrednio w sieci. Do tego dochodzi rozszerzalny system wtyczek, a wszystkim da się sterować z klawiatury.

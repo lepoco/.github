@@ -6,25 +6,25 @@ author: 'Leszek Pomianowski'
 tags: ['mcp', 'docker', 'camunda', 'openapi', 'ai', 'automation']
 ---
 
-I recently built two MCP (Model Context Protocol) servers that have been added to Docker's official MCP repository. The idea was to make AI assistants work better with business tools like Camunda process engines and OpenAPI specifications.
+I recently built two MCP (Model Context Protocol) servers, and Docker added both to its official MCP repository. I wanted AI assistants to work better with business tools like Camunda process engines and OpenAPI specifications.
 
 ## What MCP Solves
 
-The Model Context Protocol is a way for AI assistants to connect with external systems securely. Instead of the AI just knowing what's in its training data, it can interact with live business systems, databases, and APIs in real-time.
+The Model Context Protocol lets AI assistants connect to external systems securely. Instead of relying only on training data, the AI can work with live business systems, databases, and APIs in real time.
 
-Think of it like giving Claude or ChatGPT the ability to check your Camunda workflows, trigger processes, or understand your API documentation without you having to copy-paste everything into the chat.
+It's like giving Claude or ChatGPT the ability to check your Camunda workflows, trigger processes, or read your API documentation. You don't have to copy-paste everything into the chat.
 
 ## The Two Servers
 
-Both servers are now available as official Docker images:
+Both servers are now available as official Docker images.
 
-**Camunda MCP Server** (`mcp/camunda`) connects AI assistants to Camunda 7 Community Edition processes. You can find the code at lepoco/mcp-camunda on GitHub.
+The Camunda MCP Server (`mcp/camunda`) connects AI assistants to Camunda 7 Community Edition processes. The code is at lepoco/mcp-camunda on GitHub.
 
-**OpenAPI MCP Server** (`mcp/openapi`) helps AI assistants understand and work with OpenAPI/Swagger specifications. The code is at lepoco/openapi.client on GitHub.
+The OpenAPI MCP Server (`mcp/openapi`) helps AI assistants understand and work with OpenAPI/Swagger specifications. The code is at lepoco/openapi.client on GitHub.
 
 ## Camunda Integration
 
-The Camunda server provides 12 tools for interacting with process engines. It handles process management like listing and monitoring BPMN instances, task operations for completing user tasks, incident handling for monitoring and resolving issues, variable management for accessing process data, and message integration for sending messages to running processes.
+The Camunda server provides 12 tools for working with process engines. For process management, you can list and monitor BPMN instances. For tasks, you can complete user tasks. You can also monitor and resolve incidents, access process data through variables, and send messages to running processes.
 
 ```json
 {
@@ -42,7 +42,7 @@ The Camunda server provides 12 tools for interacting with process engines. It ha
 
 ## OpenAPI MCP Server
 
-The OpenAPI MCP Server is a comprehensive toolkit for working with API specifications, providing **5 essential tools**:
+The OpenAPI MCP Server is a toolkit for working with API specifications. It provides 5 tools.
 
 ### Key Features
 - **Specification Analysis**: Validate OpenAPI/Swagger documents
@@ -59,7 +59,7 @@ The OpenAPI MCP Server is a comprehensive toolkit for working with API specifica
 
 ## Getting Started
 
-Want to try these MCP servers? Here's how:
+Want to try these MCP servers? Here's how.
 
 ### Quick Start with Docker
 ```bash
@@ -72,12 +72,7 @@ docker mcp server enable openapi
 
 ## Development
 
-The MCP ecosystem is just getting started. Here's how you can get involved:
-
-- **Try the servers** in your AI workflows
-- **Contribute** to the open-source repositories
-- **Share feedback** and feature requests
-- **Build your own** MCP servers
+The MCP ecosystem is just getting started. You can try the servers in your AI workflows, contribute to the open-source repositories, share feedback and feature requests, or build your own MCP servers.
 
 You can find both projects on GitHub:
 - [Camunda MCP Server](https://github.com/lepoco/mcp-camunda)
@@ -85,4 +80,4 @@ You can find both projects on GitHub:
 
 ---
 
-*The future of AI-powered development is here, and it's built on open standards, community collaboration, and shared innovation. Let's build something amazing together.*
+*AI-powered development is built on open standards, community collaboration, and shared innovation. I'd love to see what you build.*

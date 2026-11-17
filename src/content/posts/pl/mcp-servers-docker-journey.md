@@ -1,30 +1,30 @@
 ---
-title: 'Tworzenie serwerów MCP: Jak sprawiłem, że AI współpracuje z narzędziami biznesowymi'
-description: 'How I built two Model Context Protocol servers for Camunda and OpenAPI that ended up in Dockers official MCP repository.'
+title: 'Tworzenie serwerów MCP: jak sprawić, by AI działało z narzędziami biznesowymi'
+description: 'Jak zbudowałem dwa serwery Model Context Protocol dla Camundy i OpenAPI, które trafiły do oficjalnego repozytorium MCP Dockera.'
 pubDate: 2024-12-01
 author: 'Leszek Pomianowski'
 tags: ['mcp', 'docker', 'camunda', 'openapi', 'ai', 'automation']
 ---
 
-I recently built two MCP (Model Context Protocol) servers that have been added to Docker's official MCP repository. The idea was to make AI assistants work better with business tools like Camunda process engines and OpenAPI specifications.
+Niedawno zbudowałem dwa serwery MCP (Model Context Protocol) i Docker dodał oba do swojego oficjalnego repozytorium MCP. Chciałem, żeby asystenci AI lepiej współpracowali z narzędziami biznesowymi, takimi jak silniki procesów Camunda i specyfikacje OpenAPI.
 
-## What MCP Solves
+## Jaki problem rozwiązuje MCP
 
-The Model Context Protocol is a way for AI assistants to connect with external systems securely. Instead of the AI just knowing what's in its training data, it can interact with live business systems, databases, and APIs in real-time.
+Model Context Protocol pozwala asystentom AI bezpiecznie łączyć się z zewnętrznymi systemami. AI nie opiera się wtedy tylko na danych treningowych. Może na bieżąco pracować z działającymi systemami biznesowymi, bazami danych i API.
 
-Think of it like giving Claude or ChatGPT the ability to check your Camunda workflows, trigger processes, or understand your API documentation without you having to copy-paste everything into the chat.
+To trochę tak, jakby Claude albo ChatGPT mógł zajrzeć do Twoich workflow w Camundzie, uruchomić proces albo przeczytać dokumentację API. Nie musisz wklejać wszystkiego do czatu.
 
-## The Two Servers
+## Dwa serwery
 
-Both servers are now available as official Docker images:
+Oba serwery są teraz dostępne jako oficjalne obrazy Dockera.
 
-**Camunda MCP Server** (`mcp/camunda`) connects AI assistants to Camunda 7 Community Edition processes. You can find the code at lepoco/mcp-camunda on GitHub.
+Camunda MCP Server (`mcp/camunda`) łączy asystentów AI z procesami w Camunda 7 Community Edition. Kod jest na GitHubie w lepoco/mcp-camunda.
 
-**OpenAPI MCP Server** (`mcp/openapi`) helps AI assistants understand and work with OpenAPI/Swagger specifications. The code is at lepoco/openapi.client on GitHub.
+OpenAPI MCP Server (`mcp/openapi`) pomaga asystentom AI rozumieć specyfikacje OpenAPI/Swagger i z nimi pracować. Kod jest na GitHubie w lepoco/openapi.client.
 
-## Camunda Integration
+## Integracja z Camundą
 
-The Camunda server provides 12 tools for interacting with process engines. It handles process management like listing and monitoring BPMN instances, task operations for completing user tasks, incident handling for monitoring and resolving issues, variable management for accessing process data, and message integration for sending messages to running processes.
+Serwer Camunda udostępnia 12 narzędzi do pracy z silnikami procesów. Przy zarządzaniu procesami możesz wyświetlać i monitorować instancje BPMN. Przy zadaniach możesz kończyć zadania użytkownika. Możesz też monitorować i rozwiązywać incydenty, sięgać do danych procesu przez zmienne oraz wysyłać wiadomości do uruchomionych procesów.
 
 ```json
 {
@@ -42,29 +42,26 @@ The Camunda server provides 12 tools for interacting with process engines. It ha
 
 ## OpenAPI MCP Server
 
-The OpenAPI MCP Server is a comprehensive toolkit for working with API specifications, providing **5 essential tools**:
+OpenAPI MCP Server to zestaw narzędzi do pracy ze specyfikacjami API. Zawiera 5 narzędzi.
 
-### Key Features
+### Najważniejsze funkcje
+- **Analiza specyfikacji**: walidacja dokumentów OpenAPI/Swagger
+- **Generowanie kodu**: fragmenty kodu w C# dla dowolnej operacji
+- **Generowanie cURL**: gotowe do użycia polecenia cURL
+- **Analiza odpowiedzi**: możliwe odpowiedzi HTTP
+- **Odkrywanie operacji**: lista wszystkich dostępnych endpointów
 
-- **Specification Analysis**: Validate OpenAPI/Swagger documents
-- **Code Generation**: Create C# snippets for any operation
-- **cURL Generation**: Generate ready-to-use cURL commands
-- **Response Analysis**: Understand possible HTTP responses
-- **Operation Discovery**: List all available endpoints
+### Praktyczne zastosowania
+- **Dokumentacja API**: automatyczne generowanie kodu klienta
+- **Przepływy testowe**: skrypty testowe tworzone ze specyfikacji
+- **Planowanie integracji**: szybkie poznanie możliwości API
+- **Szybszy development**: mniej pisania boilerplate'u
 
-### Practical Applications
+## Jak zacząć
 
-- **API Documentation**: Automatically generate client code
-- **Testing Workflows**: Create test scripts from specifications
-- **Integration Planning**: Understand API capabilities quickly
-- **Development Acceleration**: Reduce boilerplate code writing
+Chcesz wypróbować te serwery MCP? Oto jak to zrobić.
 
-## Getting Started
-
-Want to try these MCP servers? Here's how:
-
-### Quick Start with Docker
-
+### Szybki start z Dockerem
 ```bash
 # Enable Camunda MCP Server
 docker mcp server enable camunda
@@ -73,20 +70,14 @@ docker mcp server enable camunda
 docker mcp server enable openapi
 ```
 
-## Development
+## Rozwój
 
-The MCP ecosystem is just getting started. Here's how you can get involved:
+Ekosystem MCP dopiero się rozkręca. Możesz wypróbować serwery w swoich workflow z AI, dołożyć coś do repozytoriów open source, podzielić się opinią i pomysłami na funkcje albo zbudować własny serwer MCP.
 
-- **Try the servers** in your AI workflows
-- **Contribute** to the open-source repositories
-- **Share feedback** and feature requests
-- **Build your own** MCP servers
-
-You can find both projects on GitHub:
-
+Oba projekty znajdziesz na GitHubie:
 - [Camunda MCP Server](https://github.com/lepoco/mcp-camunda)
 - [OpenAPI MCP Server](https://github.com/lepoco/openapi.client)
 
 ---
 
-*The future of AI-powered development is here, and it's built on open standards, community collaboration, and shared innovation. Let's build something amazing together.*
+*Programowanie z AI opiera się na otwartych standardach, współpracy społeczności i dzieleniu się pomysłami. Chętnie zobaczę, co zbudujesz.*
